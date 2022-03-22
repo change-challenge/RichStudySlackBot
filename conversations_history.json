@@ -1,0 +1,19 @@
+{'ok': True, 'oldest': '1647934218.000000', 'messages': [
+		{'client_msg_id': '5f8740bf-c09f-4c53-a4a0-a5ceda84f483', 'type': 'message', 'text': '이것은 TEST입니다', 'user': 'U01R3U5FQL8', 'ts': '1647935690.067659', 'team': 'T01QE9UB0SF', 'blocks': [
+				{'type': 'rich_text', 'block_id': 'TJrRc', 'elements': [
+						{'type': 'rich_text_section', 'elements': [
+								{'type': 'text', 'text': '이것은 TEST입니다'
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{'bot_id': 'B02DEHF5M3K', 'type': 'message', 'text': 'Hello from your app! :tada:', 'user': 'U02D1UEL81Z', 'ts': '1647934218.926589', 'team': 'T01QE9UB0SF', 'bot_profile': {'id': 'B02DEHF5M3K', 'deleted': False, 'name': '[official
+				]Rich_Study', 'updated': 1645333985, 'app_id': 'A02D1RLDEUS', 'icons': {'image_36': 'https: /avatars.slack-edge.com/2021-09-01/2437176045622_eb33d0f5624c25ca5950_36.png', 'image_48': 'https:/avatars.slack-edge.com/2021-09-01/2437176045622_eb33d0f5624c25ca5950_48.png', 'image_72': 'https:/avatars.slack-edge.com/2021-09-01/2437176045622_eb33d0f5624c25ca5950_72.png'
+				}, 'team_id': 'T01QE9UB0SF'
+			}
+		}
+	], 'has_more': False, 'pin_count': 0, 'channel_actions_ts': None, 'channel_actions_count': 0
+}

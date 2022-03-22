@@ -7,17 +7,17 @@ import schedule
 import datetime
 import sys
 
-cash_fit = 'https://hooks.slack.com/services/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' 
+cash_fit = 'https://hooks.slack.com/services/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' 
 annocement = 'https://hooks.slack.com/services/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'
 question = 'https://hooks.slack.com/services/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'
 
-with open("/Users/hojinjang/Desktop/SlackBot-RichStudy/json/attendVote.json", "rt") as block_f:
+with open("/Users/hchang/Desktop/RichStudySlackBot/json/attendVote.json", "rt") as block_f:
 	attendData = json.load(block_f)
 
-with open("/Users/hojinjang/Desktop/SlackBot-RichStudy/json/questionVote.json", "rt") as block_f:
+with open("/Users/hchang/Desktop/RichStudySlackBot/json/questionVote.json", "rt") as block_f:
 	questionData = json.load(block_f) 
 
-with open("/Users/hojinjang/Desktop/SlackBot-RichStudy/json/test.json", "rt") as block_f:
+with open("/Users/hchang/Desktop/RichStudySlackBot/json/test.json", "rt") as block_f:
 	testData = json.load(block_f) 
 
 def post_to_slack(message, webhook_url):
@@ -29,7 +29,7 @@ def post_to_slack(message, webhook_url):
 	) 
 	if response.status_code != 200: 
 		raise ValueError( 
-			'Request to slack returned an error %s, the response is:\n%s' 
+			'Request to slack returned an error %s, the response is:\n%s'
 			% (response.status_code, response.text) 
 		) 
 post_to_slack(testData, cash_fit)
