@@ -42,8 +42,8 @@ class UserID:
 				"정현진",
 				"천지영",
 				"최명원",
-				"한수경",
-				"하승희"
+				"하승희",
+				"한수경"
 			]
 	user_id_to_name = {
 				"U02RL2XV4KH" : "강동운",
@@ -71,8 +71,8 @@ class UserID:
 				"U02727PASNS" : "정현진",
 				"U032CUPKA95" : "천지영",
 				"U02S0ER3W9H" : "최명원",
-				"U027382N5K7" : "한수경",
-				"U02RU5T3KSS" : "하승희"
+				"U02RU5T3KSS" : "하승희",
+				"U027382N5K7" : "한수경"
 			}
 	user_name_to_id = {
 				"강동운" : "U02RL2XV4KH",
@@ -100,7 +100,7 @@ class UserID:
 				"정현진" : "U02727PASNS",
 				"천지영" : "U032CUPKA95",
 				"최명원" : "U02S0ER3W9H",
+				"하승희" : "U02RU5T3KSS",
 				"한수경" : "U027382N5K7",
-				"하승희" : "U02RU5T3KSS"
 	}
 	

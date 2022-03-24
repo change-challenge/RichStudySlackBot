@@ -31,7 +31,6 @@ def post_message(channel, blocks):
 #    schedule.run_pending()
 #    time.sleep(1)
 
-
 #def post_to_slack(message, webhook_url):
 #	slack_data = json.dumps({'blocks': message}) 
 #	response = requests.post(

@@ -1,4 +1,5 @@
 from datetime import datetime, timedelta
+import time
 # CERTIFICATE_VERIFY_FAILED 발생시 추가
 import ssl
 ssl._create_default_https_context = ssl._create_unverified_context
@@ -15,6 +16,10 @@ class TimeStr:
 	attend_time_str = attend_time[0:4] + "년 " + attend_time[5:7] + "월 " + attend_time[8:10] + "일"
 	question_time_str = question_time[0:4] + "년 " + question_time[5:7] + "월 " + question_time[8:10] + "일"
 	bookrathon_time_str = bookrathon_time[0:4] + "년 " + bookrathon_time[5:7] + "월 " + bookrathon_time[8:10] + "일"
+
+	# datetime을 timestamp로 바꾸는 함수
+	def datetime_to_timestamp(dst_time):
+		return time.mktime(datetime.strptime(dst_time, '%Y-%m-%d %H:%M:%S').timetuple())
 
 class PostStatement:
 	attend_vote_state = [
