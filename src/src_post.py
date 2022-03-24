@@ -6,6 +6,29 @@ import ssl
 ssl._create_default_https_context = ssl._create_unverified_context
 # 여기까지 
 
+class slack_format:
+	vote_format = {
+		"type" : "section",
+		"text" : {
+			"type" : "mrkdwn",
+			"text" : ""
+		}
+	}
+	question_format = {
+		"type" : "section",
+		"text" : {
+			"type" : "mrkdwn",
+			"text" : ""
+		}
+	}
+	attend_format = {
+		"type" : "section",
+		"text" : {
+			"type" : "mrkdwn",
+			"text" : ""
+		}
+	}
+
 class PostStatement:
 	attend_vote_state = [
 		{

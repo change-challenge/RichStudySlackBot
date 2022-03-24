@@ -8,6 +8,7 @@
 from slack import WebClient
 import src.src_info as si
 import src.src_post as sp
+import slack_penalty
 
 client = WebClient(si.BotOAuth.bot_token)
 
@@ -18,8 +19,8 @@ def post_message(channel, blocks):
 	client.chat_postMessage(channel=channel, blocks=blocks)
 
 
-
-
+# post_message(si.ChannelID.cash_fit,sp.PostStatement.attend_vote_state)
+post_message(si.ChannelID.cash_fit, slack_penalty.result)
 
 
 

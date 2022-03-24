@@ -3,12 +3,13 @@ import time
 
 # [readme first]
 # google_sheet_time은 월요일 기준, 이틀 전 토요일 (북라톤 날짜)
-# penalty_time은 월요일 기준, 금요일 (벌금 데드라인 날짜)
-# attend_time은 일요일 기준, 월요일 (참석 투표 날짜)
-# question_time은 일요일 기준, 다음주 금요일 (질문 선정 날짜)
-# bookrathon_time은 일요일 기준, 다음주 토요일 (북라톤 날짜)
-# twodayago은 월요일 기준, 46시간 전 (post 시간)
-# check_time (google sheet에서 날짜 구분해주는 값)
+# penalty_time_src은 월요일 기준, 금요일 (벌금 데드라인 날짜)
+# twodayago_ts는 월요일 기준, 46시간 전 (post 시간)
+
+# attend_time_src은 일요일 기준, 월요일 (참석 투표 날짜)
+# question_time_src은 일요일 기준, 다음주 금요일 (질문 선정 날짜)
+# bookrathon_time_src은 일요일 기준, 다음주 토요일 (북라톤 날짜)
+# check_time은 월요일 기준, 이틀 전 토요일 (google sheet에서 날짜 구분해주는 값)
 
 twodayago = (datetime.today() - timedelta(hours=46)).strftime('%Y-%m-%d %H:%M:%S')
 twodayago_ex = (datetime.today() - timedelta(days=5)).strftime('%Y-%m-%d %H:%M:%S')
@@ -24,8 +25,8 @@ class TimeStr:
 	# 포맷) 04/02
 	check_time = (datetime.today() - timedelta(days=2)).strftime('%m/%d')
 	# 포맷) 2022년 04월 02일
-	nowtimeStr = datetime.today().strftime('%Y년%m월%d일')
-	penalty_time = (datetime.today() + timedelta(days=4)).strftime('%Y년%m월%d일')
-	attend_time_str = (datetime.today() + timedelta(days=1)).strftime('%Y년%m월%d일')
-	question_time_str = (datetime.today() + timedelta(days=12)).strftime('%Y년%m월%d일') 
-	bookrathon_time_str = (datetime.today() + timedelta(days=13)).strftime('%Y년%m월%d일')
+	nowtime_str = datetime.today().strftime('%Y년 %m월 %d일')
+	penalty_time_str = (datetime.today() + timedelta(days=4)).strftime('%Y년 %m월 %d일')
+	attend_time_str = (datetime.today() + timedelta(days=1)).strftime('%Y년 %m월 %d일')
+	question_time_str = (datetime.today() + timedelta(days=12)).strftime('%Y년 %m월 %d일') 
+	bookrathon_time_str = (datetime.today() + timedelta(days=13)).strftime('%Y년 %m월 %d일')

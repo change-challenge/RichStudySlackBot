@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "richstudy",
+  "private_key_id": "fd55cc859e9e8c20145b89d9671f19c44ab84488",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCj9iQCsY7MODRe\noT1y/14ftXm0pUhEOKth9EeorEUo4hq5gBJ8fXBfbAJOmZENMGufU0Z2SKuWaatS\n9guNMiYzhOn2N/D0aaVH1NZ/DZJRSk+faeWmsA/CWzP9BK7ynSeIymuBbd7kMAaf\nXyL6G8U+dx1w237F86+SKHAlT84lcwlcH+EI/JuO3inXwjdGi3bXkNcJ0OOonS4k\n8RNQxNPs/uOu1u2ZFcTAVS5MPI26LU0+hWNC0LyZ/jjo8Iz3Uwk3LF1EfgSnCf5r\ni1JdFoOyDgbVinedRuWbC8dYLk0sLQ66C1LED3NmM0PCErXBJWCVK10yrDfQeU/F\nExTpkaJNAgMBAAECggEAASNl/f1TX5tAh1+nRiuYvyfab23tA8aufdQ2E3jX1yIV\n0Ovy0aQln5whNTHp2xsYTAPi92y5fBGNh4wowpMz5nykeI6idP5L0/tOAHFGP8p4\nUfq21wc+siaviF1KXgvCpZBYEUCdkVunwHD2j10NAy1khYC/8egc3F9Ejublv9ii\nNVXejPJsNIVRQkQ9Qa/jG+Oa3MtBc6vCicPa2FbcBMZCUlfV//YMV2PtB6cVlwZX\n1Tr4sR+0AG/chXpLdsf+RwpF2U7LIi42Mvh4bt8rGhdbqoo9CG+cfwhO5KKc86I7\nM4/ffLP+v8erF5ByIVWb0ovaWGuA13lesFTXQutfqQKBgQDOa59Q6HZZvYEGpa0j\n4kWCKL6NvkytffmCiaRLhYgBSTH6H7D0MOIDnJXfxayNShODLn+haD+5D1OZnmWR\nEQlrOdRbC/qS5i9WeEMbW6Ko/h/WnC3V8Auttel3oPSo4d3tWxXJtD2f+vxOlvEQ\nYOWsSX6wQub/IoC2ZgiPlBukxwKBgQDLV83/va7g4GBihE6HaRh40Pu66YAxKrck\nfYt0kkPPSUAuXtTZh6Nnot+c5HlwZ12Ppdu0Y1u4S7PMK7kNQN8gRHU0CjhrWVkf\nNmzEelD2CQ77dcULd90brN/eAmUBBnINAHKFruWKSM6AMvJ8QMWWTpEwYJJgjKqb\nfc3p2jDESwKBgAY6FudA6/kPD2pc6xkvBTvE8OKjv/pn13QJpOwmThED3T8XX6Yu\nJ1NGkPrcIrVsa6REbdM3qtxxSutSbOvwYKFccDyC4v81dG4eWJ/lpsWETP+TXIqc\noC2QVEeokljZ33D+k2yvRECkOKJCSWleEu+ck/bLPd6qcsmN0GpMZH0XAoGAZOdQ\nYMy2n/6Xtatj8Iv1SdaiY/EE3OEOenwWHKWMIqt9vsTuKHfHXWEUR52UqXORmPu7\n13rKg9yE/xbfQDVlw3RVGJrNvm9a60MtnB36WOzL03pwai1zug0CFf/oMScKp2sG\naVINs55HYpRlgcT+h4S7RV9Wo7SJ4Jj/+kB8nJsCgYEAm3+zwHJuWq149OBoLnnV\na/ciyBGfgzvnKfPogOmIPyLZSfmDveMSWr6bS4qVAo5qVP7v1B+39GPwTPUxr8IA\nsSWQAjcpfevLJ0DwNQ8P7Oz83FCMniZwBVieYnWQtMGoNa1339yd7NoTb4veIYkV\n+z36hDekz/SZAt/hd2puOko=\n-----END PRIVATE KEY-----\n",
+  "client_email": "change-challenge@richstudy.iam.gserviceaccount.com",
+  "client_id": "105227460652953740171",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/change-challenge%40richstudy.iam.gserviceaccount.com"
+}
