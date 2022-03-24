@@ -102,3 +102,48 @@ class PostStatement:
 				}
 		}
 	]
+	penalty_state = [
+		{
+			"type": "context",
+			"elements": [
+				{
+					"type": "mrkdwn",
+					"text": "@here"
+				}
+			]
+		},
+		{
+			"type": "header",
+				"text": {
+					"type": "plain_text",
+					"text": "[💸 " + st.TimeStr.nowtime_str + " 현재 벌금] \n\n"
+				}
+		},
+		{
+			"type": "section",
+			"text": {
+				"type": "mrkdwn",
+				"text": "*[모임 투표 지각자] *"
+				}
+		},
+		{
+			"type": "section",
+			"text": {
+				"type": "mrkdwn",
+				"text": "*[질문 선정 지각자] *"
+				}
+		},
+		{
+			"type": "section",
+			"text": {
+				"type": "mrkdwn",
+				"text": "*[모임 지각자] *"
+				}
+		},
+		{
+			"type": "section",
+			"text": {
+				"type": "mrkdwn",
+				"text": "모든 벌금은 *"+ st.TimeStr.penalty_time_str + " (금) 23시 59분까지*  내야합니다.\n*기간 안에 내지 않으면, x2* 가 됩니다. 😢\n\n*벌금 내신 분들은 이 글에 이모지✅* 를 달아주세요.\n\n"
+				}
+		}]
