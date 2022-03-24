@@ -2,13 +2,24 @@ from oauth2client.service_account import ServiceAccountCredentials
 import gspread
 import src_info as si
 
-def import_gsheet(spreadsheet_url, timeidx):
-    credential = ServiceAccountCredentials.from_json_keyfile_name(json_key_path, scope)
-    gc = gspread.authorize(credential)
-    doc = gc.open_by_url(spreadsheet_url)
-    worksheet = doc.worksheet("벌금명단")
-    col_data = worksheet.col_values(timeidx)
-    return (col_data[2:])
+scope = [
+    "https://spreadsheets.google.com/feeds",
+    "https://www.googleapis.com/auth/drive",
+]
+json_key_path = "./richstudy-f9673624cbe9.json"	# JSON Key File Path
+spreadsheet_url = "https://docs.google.com/spreadsheets/d/1DuBSkKT665lYLiatWSIZ94NssrhH5ErJQheUdFuPYKk/edit#gid=2139714808"
+
+#  def import_gsheet(spreadsheet_url, timeidx):
+credential = ServiceAccountCredentials.from_json_keyfile_name(json_key_path, scope)
+gc = gspread.authorize(credential)
+doc = gc.open_by_url(spreadsheet_url)
+worksheet = doc.worksheet("벌금명단")
+
+row_data = worksheet.row_values(4)
+print(row_data[2:])
+#  col_data = worksheet.col_values(timeidx)
+worksheet.update_acell('C5', '= CONCATENATE("00", "1")')
+    #  return (col_data[4:])
 
 def get_later(spreadsheet_url, timeidx):
     vote_later = []
@@ -27,28 +38,22 @@ def get_later(spreadsheet_url, timeidx):
     return (vote_later, question_later, attend_later)
 
 
-scope = [
-    "https://spreadsheets.google.com/feeds",
-    "https://www.googleapis.com/auth/drive",
-]
-
-json_key_path = "./logical-tea-345007-5edc511aecb4.json"	# JSON Key File Path
-spreadsheet_url = "https://docs.google.com/spreadsheets/d/1DuBSkKT665lYLiatWSIZ94NssrhH5ErJQheUdFuPYKk/edit#gid=1319193929"
-
-timeidx = 2
-v, q, a = get_later(spreadsheet_url, timeidx)
-print("투표 지각 :")
-print(v)
-print()
-print("질문 지각 :")
-print(q)
-print()
-print("참석 지각 :")
-print(a)
-print()
+#  google_day = sr...
+#  for go
+#  google_idx = google_day()
+#  timeidx = 3
+#  v, q, a = get_later(spreadsheet_url, timeidx)
+#  print("투표 지각 :")
+#  print(v)
+#  print()
+#  print("질문 지각 :")
+#  print(q)
+#  print()
+#  print("참석 지각 :")
+#  print(a)
+#  print()
 #------------------------
 # 쓰기
-#  worksheet.update_acell('B3', '= CONCATENATE("00", "1")')
 
 # URL로 열기
 
@@ -78,14 +83,14 @@ print()
 #  print(value_a1)
 #
 #  # 행 값 가져오기
-#  row_data = worksheet.row_values(2)
-#  print(row_data[1:])
+#  row_data = worksheet.row_values(4)
+#  print(row_data[2:])
 
 # 열 값 가져오기
-#  print(col_data[2:])
 #  col_data = worksheet.col_values(3)
-#  print(col_data[2:])
-
-# 열 값 가져오기
-#  rang_data = worksheet.get_values("B3:B7")
+#  print(col_data[4:])
+#
+#  print()
+#  # 범위 값 가져오기
+#  rang_data = worksheet.get_values("C5:C31")
 #  print(rang_data)
