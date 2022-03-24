@@ -2,14 +2,10 @@ from datetime import date, datetime, timedelta
 from ssl import ALERT_DESCRIPTION_UNEXPECTED_MESSAGE
 from slack import WebClient
 import src.src_info as si
-import src.src_post as sp
+import src.src_time as st
 
 client = WebClient(si.BotOAuth.bot_token)
 users_name = si.UserID.users_name
-
-# twodayago = (datetime.today() - timedelta(hours=46)).strftime('%Y-%m-%d %H:%M:%S')
-twodayago = (datetime.today() - timedelta(days=5)).strftime('%Y-%m-%d %H:%M:%S')
-twodayago_ts = sp.TimeStr.datetime_to_timestamp(twodayago)
 
 # 돌아가는 시간은 월요일 저녁 22시
 def get_vote_users(timestamp):

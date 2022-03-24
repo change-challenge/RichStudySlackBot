@@ -1,25 +1,10 @@
 from datetime import datetime, timedelta
 import time
+import src.src_time as st
 # CERTIFICATE_VERIFY_FAILED 발생시 추가
 import ssl
 ssl._create_default_https_context = ssl._create_unverified_context
 # 여기까지 
-
-nowtime = datetime.today().strftime('%Y-%m-%d')
-penalty_time = (datetime.today() + timedelta(days=4)).strftime('%Y-%m-%d') # 월요일 기준, 금요일
-attend_time = (datetime.today() + timedelta(days=1)).strftime('%Y-%m-%d') # 일요일 기준, 월요일 
-question_time = (datetime.today() + timedelta(days=12)).strftime('%Y-%m-%d') # 일요일 기준, 다음주 금요일
-bookrathon_time = (datetime.today() + timedelta(days=13)).strftime('%Y-%m-%d') # 일요일 기준, 다음주 토요일
-
-class TimeStr:
-	nowtimeStr = nowtime[0:4] + "년 " + nowtime[5:7] + "월 " + nowtime[8:10] + "일"
-	attend_time_str = attend_time[0:4] + "년 " + attend_time[5:7] + "월 " + attend_time[8:10] + "일"
-	question_time_str = question_time[0:4] + "년 " + question_time[5:7] + "월 " + question_time[8:10] + "일"
-	bookrathon_time_str = bookrathon_time[0:4] + "년 " + bookrathon_time[5:7] + "월 " + bookrathon_time[8:10] + "일"
-
-	# datetime을 timestamp로 바꾸는 함수
-	def datetime_to_timestamp(dst_time):
-		return time.mktime(datetime.strptime(dst_time, '%Y-%m-%d %H:%M:%S').timetuple())
 
 class PostStatement:
 	attend_vote_state = [
@@ -36,14 +21,14 @@ class PostStatement:
 			"type": "header",
 				"text": {
 					"type": "plain_text",
-					"text": "[🖐 " + TimeStr.bookrathon_time_str + " 북라톤 참석 인원 조사] \n\n"
+					"text": "[🖐 " + st.TimeStr.bookrathon_time_str + " 북라톤 참석 인원 조사] \n\n"
 				}
 		},
 		{
 			"type": "section",
 			"text": {
 				"type": "mrkdwn",
-				"text": ">✅ 책 :  자유 선정\n>✅ 모임 장소 : 그룹 별 상이\n>✅ 모임 날짜 : *" + TimeStr.bookrathon_time_str + " (토)* \n>✅ 투표 기간 : *" + TimeStr.attend_time_str + " (월) 저녁 22시까지 (벌금 有)* \n\n"
+				"text": ">✅ 책 :  자유 선정\n>✅ 모임 장소 : 그룹 별 상이\n>✅ 모임 날짜 : *" + st.TimeStr.bookrathon_time_str + " (토)* \n>✅ 투표 기간 : *" + st.TimeStr.attend_time_str + " (월) 저녁 22시까지 (벌금 有)* \n\n"
 				}
 		},
 		{
@@ -69,14 +54,14 @@ class PostStatement:
 			"type": "header",
 				"text": {
 					"type": "plain_text",
-					"text": "[✍️ " + TimeStr.bookrathon_time_str + " 북라톤 질문 선정] \n\n"
+					"text": "[✍️ " + st.TimeStr.bookrathon_time_str + " 북라톤 질문 선정] \n\n"
 				}
 		},
 		{
 			"type": "section",
 			"text": {
 				"type": "mrkdwn",
-				"text": ">✅ 작성 기간 : *" + TimeStr.question_time_str + " (금) 저녁 22시까지 (벌금 有)* \n\n"
+				"text": ">✅ 작성 기간 : *" + st.TimeStr.question_time_str + " (금) 저녁 22시까지 (벌금 有)* \n\n"
 				}
 		},
 		{

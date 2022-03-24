@@ -11,6 +11,9 @@ import src.src_post as sp
 
 client = WebClient(si.BotOAuth.bot_token)
 
+
+# 함수 호출 예시)
+# post_message(si.ChannelID.cash_fit,sp.PostStatement.attend_vote_state)
 def post_message(channel, blocks):
 	client.chat_postMessage(channel=channel, blocks=blocks)
 
@@ -19,27 +22,33 @@ def post_message(channel, blocks):
 
 
 
-#def exit():
-#	print("시스템을 종료합니다.")
-#	sys.exit()
 
-#schedule.every().day.at("12:04").do(post_to_slack, attendData, annocement)
-##schedule.every().day.at("12:04").do(post_to_slack, questionData, question)
-#schedule.every().day.at("12:04").do(exit)
 
-#while True:
-#    schedule.run_pending()
-#    time.sleep(1)
 
-#def post_to_slack(message, webhook_url):
-#	slack_data = json.dumps({'blocks': message}) 
-#	response = requests.post(
-#		webhook_url, 
-#		data=slack_data, 
-#		headers={'Content-Type': 'application/json'} 
-#	) 
-#	if response.status_code != 200: 
-#		raise ValueError( 
-#			'Request to slack returned an error %s, the response is:\n%s'
-#			% (response.status_code, response.text) 
-#		) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# def post_to_slack(message, webhook_url):
+# 	slack_data = json.dumps({'blocks': message}) 
+# 	response = requests.post(
+# 		webhook_url, 
+# 		data=slack_data, 
+# 		headers={'Content-Type': 'application/json'} 
+# 	) 
+# 	if response.status_code != 200: 
+# 		raise ValueError( 
+# 			'Request to slack returned an error %s, the response is:\n%s'
+# 			% (response.status_code, response.text) 
+# ) 
