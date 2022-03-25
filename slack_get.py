@@ -7,6 +7,7 @@ import src.src_time as st
 client = WebClient(si.BotOAuth.bot_token)
 users_name = si.UserID.users_name
 
+# get_vote_users(st.TimeStr.twodayago_ts_ex)
 # 돌아가는 시간은 월요일 저녁 22시
 def get_vote_users(timestamp):
 	total_users = []
