@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "logical-tea-345007",
+  "private_key_id": "0a52f29ec1c02b22f6fd5b3977d91385210dbf9b",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC6kLf2SJcUlMMs\nu5QCjb4znjFXS+4ZZqjYxpDxr37fJlAr/9buzosSyWA8VHzxOWks6sKJC7D4T3g6\n6XgV/2m+Bev/bWrdDLF8QfOcQTyu58zH9imlE/m+Hcc6fkwIm4V4VNfvD4IydunT\nb+Ccd9uxlmpD//4tSCepyYenDBj7NTaVkXtSyXTdVj2FuQgJBPSEfOs0qn9N0hSv\nZXBgchp6OQ/7EUOnr0Qv1fhi0Nx1l/9JDUL9SHWPnAJIrIQbwoRYCly2fx4Q4qgx\n4HH0CWxlVWBtpXV0t2rn+8fTO00cxVoaxoPa5Rjsc1dbu3B2fO48P2E+/rtss1Ls\n/bXEzePZAgMBAAECggEARNf1QljcAzi34tBfGCgk2RhVXcDDnjTvNnrjboPTfdW9\n/NZ+AgZOdILB09Fbf4ovYOdKHNcnGSH+HEMd0IQ9CWVXBhzis6ok7lTJ58187o/T\n1a/lAyjhXgHQDCohtYVqFZK9UdZ3tVaDB0Y/7I0gESKPmQMkUKJRHIqk14QTzdJc\nlI8xp8d1FZGIpBocBbuD8yb3MTrhl3tiUsL7cr4/3c22soL89U3uNder516jk7hl\nqp8beTdc3keR6/Qzc68nMP8g3WthEN8K8kymoq9DQlZpR/b7l2FayMVgEvAsMVfa\nhQPK6dRT6vDf27T2J/KlNraQkGdcSXlFYBhTv9uohwKBgQD8kSZagh2H6kR5JbNq\nAJJrRZ6aXp+KTtbJKYPdLDtAZanphBxdvixhNN9vVX30F0h1C6hKhTElfq1b9CF1\nw3U8VvMNMEbp5wbblXmlk8OwlU3zOqCP0BFYawFkZ+owx2KzX+eMwSypE4MB2gRQ\nkodL0B0J5VxMOLC2l0QTS8Bd/wKBgQC9GeeTuTe7loRhwcoB/DGrjVoXT6lWWWDz\nq6MgqJ+aEAMC1KozQPH+iuzHKy4yasU3q8IidDfqeS+6icRWH2hjKQ3ZNQOKN7Fn\nxIU7plMVNUIvyvQMnFWOL7jDhhMwJQIRi/JHl9NhWPA4PdjJ5JjE+ci9m86EQos1\n5e6xJeRuJwKBgHvqUyDw2cBHZhTyNFZ7tVrAK5KdfjUDfUnw/mtTOjbcKkMRuEEd\n/vQqVr1u+n75tWkHsSfutTAqOK/21TvMDAbwugrsdr5nxOuTKL3eA5LtjfMZ/pDQ\nitIQnfw/J52LFZfgI+DhHiJOGmacKqXFXnAJyVWDnIchAUJ0cMfu0JDNAoGAJ6g3\nGJPPTFfUi2vIoYHyKLgMHLdoG+PCoVdtbnvufLC+8OkIiJcmKOuZnGtB1PDvSy2K\nGQ+malXf3I7nzefoTGNftB2aEHJ9kfV0u322DsyMhNlbNQnUJ216ogaMH5yjQmrG\n9Jyyh8fPGPxfane2UhjQMHNsa/BIoZUG6b+4mCECgYEAvhf11EPFNtr5Ep2XtC9s\nAsGNrw3df4lIYJOFB3n19/cv9Flxonx/+ife1Kkhf1OCJDkJTUcCou+MNS4r/okx\n/4+BMRi9k7l1Ucnh4wWnpdCA/LvVXTroooiFaXOW8Zs/CS4r6/STYsxGuv1bDfDv\ndjYn06EHOMZcDgvY4SZxkd0=\n-----END PRIVATE KEY-----\n",
+  "client_email": "rich-study-giromi@logical-tea-345007.iam.gserviceaccount.com",
+  "client_id": "102577584705782242758",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/rich-study-giromi%40logical-tea-345007.iam.gserviceaccount.com"
+}

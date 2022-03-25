@@ -6,26 +6,22 @@ scope = [
     "https://spreadsheets.google.com/feeds",
     "https://www.googleapis.com/auth/drive",
 ]
-json_key_path = "./richstudy-f9673624cbe9.json"	# JSON Key File Path
+json_key_path = "./richstudy-c771b0080ee8.json"	# JSON Key File Path
 spreadsheet_url = "https://docs.google.com/spreadsheets/d/1DuBSkKT665lYLiatWSIZ94NssrhH5ErJQheUdFuPYKk/edit#gid=2139714808"
 
-#  def import_gsheet(spreadsheet_url, timeidx):
+def import_gsheet(spreadsheet_url, timeidx):
 credential = ServiceAccountCredentials.from_json_keyfile_name(json_key_path, scope)
 gc = gspread.authorize(credential)
 doc = gc.open_by_url(spreadsheet_url)
-worksheet = doc.worksheet("벌금명단")
-
-row_data = worksheet.row_values(4)
-print(row_data[2:])
-#  col_data = worksheet.col_values(timeidx)
-worksheet.update_acell('C5', '= CONCATENATE("00", "1")')
-    #  return (col_data[4:])
+    worksheet = doc.worksheet("벌금명단")
+    return
 
 def get_later(spreadsheet_url, timeidx):
     vote_later = []
     question_later = []
     attend_later = []
-    bits_data = import_gsheet(spreadsheet_url, timeidx)
+    col_data = worksheet.col_values(timeidx)
+    bits_data = col_data[4:]
     i = 0
     for result in bits_data:
         if result[0] == '1':
@@ -37,6 +33,9 @@ def get_later(spreadsheet_url, timeidx):
         i += 1
     return (vote_later, question_later, attend_later)
 
+worksheet.update_acell('C6', '= CONCATENATE("00", "1")')
+row_data = worksheet.row_values(4)
+print(row_data[2:])
 
 #  google_day = sr...
 #  for go
