@@ -30,3 +30,16 @@ class TimeStr:
 	attend_time_str = (datetime.today() + timedelta(days=1)).strftime('%Y년 %m월 %d일')
 	question_time_str = (datetime.today() + timedelta(days=12)).strftime('%Y년 %m월 %d일') 
 	bookrathon_time_str = (datetime.today() + timedelta(days=13)).strftime('%Y년 %m월 %d일')
+
+col_offset = 2
+rol_offset = 4
+
+def get_timeidx(worksheet, check_time):
+    row_data = worksheet.row_values(rol_offset)[col_offset:]
+    print(row_data)
+    i = 0
+    for time in row_data:
+        if (time == check_time):
+            return(i)
+        i += 1
+    return(-1)

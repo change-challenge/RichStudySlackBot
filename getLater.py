@@ -1,16 +1,23 @@
 import src.src_info as si
+import src.src_time as st
+#<<<<<<<<<<<<<<delete
+from datetime import datetime, timedelta
+import time
+#<<<<<<<<<<<<<<
 
 json_key_path = "richstudy-c771b0080ee8.json"	# JSON Key File Path
 spreadsheet_url = "https://docs.google.com/spreadsheets/d/1DuBSkKT665lYLiatWSIZ94NssrhH5ErJQheUdFuPYKk/edit#gid=2139714808"
 worktab = '벌금명단'
-
 worksheet = si.import_googlesheet(json_key_path, spreadsheet_url, worktab)
+col_offset = 3
+rol_offset = 4
 
-def get_later(spreadsheet_url, timeidx):
+def get_later(timestr):
     vote_later = []
     question_later = []
     attend_later = []
-    bits_data = worksheet.col_values(3)[4:]
+    timeidx = st.get_timeidx(worksheet, timestr) + col_offset
+    bits_data = worksheet.col_values(timeidx)[rol_offset:]
     i = 0
     for result in bits_data:
         if result[0] == '1':
@@ -23,16 +30,8 @@ def get_later(spreadsheet_url, timeidx):
     return (vote_later, question_later, attend_later)
 
 
-def timeidx()
-#  row_data = worksheet.row_values(4)
-#  print(row_data[2:])
-#  col_data = worksheet.col_values(3)
-#  print(col_data)
-#  google_day = sr...
-#  for go
-#  google_idx = google_day()
-timeidx = 3
-v, q, a = get_later(spreadsheet_url, timeidx)
+#  timeidx = st.get_timeidx(worksheet, st.TimeStr.check_time) + col_offset
+v, q, a = get_later('04/02')
 print("투표 지각 :")
 print(v)
 print()
@@ -42,10 +41,10 @@ print()
 print("참석 지각 :")
 print(a)
 print()
+print(ord('A'))
+print(chr(65))
 
 #------------------------
-# 쓰기
-#  worksheet.update_acell('C5', '= CONCATENATE("11", "1")')
 
 # URL로 열기
 
