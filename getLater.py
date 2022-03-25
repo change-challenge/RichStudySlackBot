@@ -11,14 +11,17 @@ spreadsheet_url = "https://docs.google.com/spreadsheets/d/1DuBSkKT665lYLiatWSIZ9
 worktab = '벌금명단'
 worksheet = si.import_googlesheet(json_key_path, spreadsheet_url, worktab)
 col_offset = 3
-rol_offset = 4
+row_offset = 4
 
 def get_later(timestr):
     vote_later = []
     question_later = []
     attend_later = []
     timeidx = st.get_timeidx(worksheet, timestr) + col_offset
-    bits_data = worksheet.col_values(timeidx)[rol_offset:]
+    if (timeidx == -1):
+        print("timestr이 없어유")
+        return (-1, -1, -1);
+    bits_data = worksheet.col_values(timeidx)[row_offset:]
     i = 0
     for result in bits_data:
         if result[0] == '1':
@@ -31,8 +34,8 @@ def get_later(timestr):
     return (vote_later, question_later, attend_later)
 
 
-#  timeidx = st.get_timeidx(worksheet, st.TimeStr.check_time) + col_offset
-v, q, a = get_later('04/02')
+#  v, q, a = get_later(st.TimeStr.check_time)
+v, q, a = get_later('04/16')
 print("투표 지각 :")
 print(v)
 print()
