@@ -1,7 +1,7 @@
 from datetime import datetime, timedelta
 import time
 
-# [readme first]
+https://github.com/change-challenge/RichStudySlackBot/pull/1/conflict?name=src%252Fsrc_info.py&base_oid=1ab34746be67e8dfbb8c829b49eebb13883bdfa6&head_oid=705a8984d1cd0a28bf7c8ac27dce799239fc59e9# [readme first]
 # google_sheet_time은 월요일 기준, 이틀 전 토요일 (북라톤 날짜)
 # penalty_time_src은 월요일 기준, 금요일 (벌금 데드라인 날짜)
 # twodayago_ts는 월요일 기준, 46시간 전 (post 시간)
@@ -43,3 +43,4 @@ def get_timeidx(worksheet, check_time):
             return(i)
         i += 1
     return(-1)
+
