@@ -1,3 +1,7 @@
+
+from oauth2client.service_account import ServiceAccountCredentials
+import gspread
+
 class WebHookUrl:
 	announcement_webhook = "https://hooks.slack.com/services/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"
 	question_webhook = "https://hooks.slack.com/services/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"
@@ -103,4 +107,14 @@ class UserID:
 				"하승희" : "U02RU5T3KSS",
 				"한수경" : "U027382N5K7",
 	}
-	
+
+def import_googlesheet(json_key_path, spreadsheet_url, tab):
+    scope = [
+        "https://spreadsheets.google.com/feeds",
+        "https://www.googleapis.com/auth/drive",
+    ]
+    credential = ServiceAccountCredentials.from_json_keyfile_name(json_key_path, scope)
+    gc = gspread.authorize(credential)
+    doc = gc.open_by_url(spreadsheet_url)
+    worksheet = doc.worksheet(tab)
+    return (worksheet)
