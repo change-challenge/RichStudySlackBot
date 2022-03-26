@@ -108,7 +108,12 @@ class UserID:
 				"한수경" : "U027382N5K7",
 	}
 
-def import_googlesheet(json_key_path, spreadsheet_url, tab):
+minsu_MSI_key = "richstudy-c771b0080ee8.json"   # JSON Key File Path...minsu
+json_key_path = minsu_MSI_key
+spreadsheet_url = "https://docs.google.com/spreadsheets/d/1DuBSkKT665lYLiatWSIZ94NssrhH5ErJQheUdFuPYKk/edit#gid=2139714808"
+
+
+def import_googlesheet(tab):
     scope = [
         "https://spreadsheets.google.com/feeds",
         "https://www.googleapis.com/auth/drive",

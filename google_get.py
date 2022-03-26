@@ -5,11 +5,8 @@ from datetime import datetime, timedelta
 import time
 #<<<<<<<<<<<<<<
 
-#minsu_key
-json_key_path = "richstudy-c771b0080ee8.json"	# JSON Key File Path
-spreadsheet_url = "https://docs.google.com/spreadsheets/d/1DuBSkKT665lYLiatWSIZ94NssrhH5ErJQheUdFuPYKk/edit#gid=2139714808"
-worktab = '벌금명단'
-worksheet = si.import_googlesheet(json_key_path, spreadsheet_url, worktab)
+#수정은 src/
+worksheet = si.import_googlesheet()
 col_offset = 3
 row_offset = 4
 
@@ -17,11 +14,11 @@ def get_later(timestr):
     vote_later = []
     question_later = []
     attend_later = []
-    timeidx = st.get_timeidx(worksheet, timestr) + col_offset
+    timeidx = st.get_timeidx(worksheet, timestr)
     if (timeidx == -1):
-        print("timestr이 없어유")
-        return (-1, -1, -1);
-    bits_data = worksheet.col_values(timeidx)[row_offset:]
+        print("[ERROR] 해당 날짜는 없어유\n")
+        return ("ERROR", "ERROR", "ERROR");
+    bits_data = worksheet.col_values(timeidx + col_offset)[row_offset:]
     i = 0
     for result in bits_data:
         if result[0] == '1':
@@ -35,7 +32,7 @@ def get_later(timestr):
 
 
 #  v, q, a = get_later(st.TimeStr.check_time)
-v, q, a = get_later('04/16')
+v, q, a = get_later('04/01')
 print("투표 지각 :")
 print(v)
 print()
