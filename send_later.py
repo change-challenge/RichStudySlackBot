@@ -8,7 +8,7 @@ worksheet = si.import_googlesheet(json_key_path, spreadsheet_url, worktab)
 col_offset = 3
 rol_offset = 4
 
-def send_vote_later(timeidx, later_data):
+def write_vote_later(timeidx, later_data):
     timeidx =
     worksheet.update_acell('C5', '= CONCATENATE("11", "1")')
 
@@ -17,9 +17,9 @@ def send_vote_later(timeidx, later_data):
 # 쓰기
 
 
-def send_question_later(timeidx, later_data):
+def write_question_later(timeidx, later_data):
     get_later
-   
+
 
 
 
