@@ -19,7 +19,7 @@ def post_message(channel, blocks):
 	client.chat_postMessage(channel=channel, blocks=blocks)
 
 
-# post_message(si.ChannelID.cash_fit,sp.PostStatement.attend_vote_state)
+#post_message(si.ChannelID.cash_fit,sp.PostStatement.attend_vote_state)
 post_message(si.ChannelID.cash_fit, slack_penalty.make_penalty())
 # ===================================================================
 # def post_to_slack(message, webhook_url):
