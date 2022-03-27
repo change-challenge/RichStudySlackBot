@@ -6,19 +6,20 @@ import time
 #<<<<<<<<<<<<<<
 
 #수정은 src/
-worksheet = si.import_googlesheet()
-col_offset = 3
+worksheet = si.import_googlesheet('벌금명단')
+#날짜 기준
+col_offset = 2
 row_offset = 4
 
 def get_later(timestr):
     vote_later = []
     question_later = []
     attend_later = []
-    timeidx = st.get_timeidx(worksheet, timestr)
+    timeidx = st.get_timeidx(col_offset, row_offset, worksheet, timestr)
     if (timeidx == -1):
         print("[ERROR] 해당 날짜는 없어유\n")
         return ("ERROR", "ERROR", "ERROR");
-    bits_data = worksheet.col_values(timeidx + col_offset)[row_offset:]
+    bits_data = worksheet.col_values(timeidx + col_offset + 1)[row_offset:]
     i = 0
     for result in bits_data:
         if result[0] == '1':
@@ -32,7 +33,7 @@ def get_later(timestr):
 
 
 #  v, q, a = get_later(st.TimeStr.check_time)
-v, q, a = get_later('04/01')
+v, q, a = get_later('04/02')
 print("투표 지각 :")
 print(v)
 print()
@@ -42,8 +43,6 @@ print()
 print("참석 지각 :")
 print(a)
 print()
-print(ord('A'))
-print(chr(65))
 
 #------------------------
 

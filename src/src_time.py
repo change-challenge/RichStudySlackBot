@@ -10,10 +10,8 @@ import time
 # question_time_src은 일요일 기준, 다음주 금요일 (질문 선정 날짜)
 # bookrathon_time_src은 일요일 기준, 다음주 토요일 (북라톤 날짜)
 # check_time은 월요일 기준, 이틀 전 토요일 (google sheet에서 날짜 구분해주는 값)
-col_offset = 2
-rol_offset = 4
 vote_check_time = (datetime.today() - timedelta(hours=46)).strftime('%Y-%m-%d %H:%M:%S')
-vote_check_time_ex = (datetime.today() - timedelta(days=5)).strftime('%Y-%m-%d %H:%M:%S')
+vote_check_time_ex = (datetime.today() - timedelta(days=7)).strftime('%Y-%m-%d %H:%M:%S')
 
 # datetime을 timestamp로 바꾸는 함수
 def datetime_to_timestamp(dst_time):
@@ -33,7 +31,7 @@ class TimeStr:
 	question_time_str = (datetime.today() + timedelta(days=12)).strftime('%Y년 %m월 %d일') 
 	bookrathon_time_str = (datetime.today() + timedelta(days=13)).strftime('%Y년 %m월 %d일')
 
-def get_timeidx(worksheet, check_time):
+def get_timeidx(col_offset, rol_offset, worksheet, check_time):
     row_data = worksheet.row_values(rol_offset)[col_offset:]
     i = 0
     for time in row_data:

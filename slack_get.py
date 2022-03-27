@@ -15,7 +15,7 @@ def get_vote_users(timestamp):
 	absent_users_id = []
 	total_users_chk = [0 for _ in range(len(users_name))]
 	vote_history = client.conversations_history(channel=si.ChannelID.announcement, oldest=timestamp)
-	
+
 	for result in vote_history["messages"]:
 		if ("subtype" in result):
 			attend_users_id = result["reactions"][0]["users"]
