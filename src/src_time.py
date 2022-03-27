@@ -10,17 +10,16 @@ import time
 # question_time_src은 일요일 기준, 다음주 금요일 (질문 선정 날짜)
 # bookrathon_time_src은 일요일 기준, 다음주 토요일 (북라톤 날짜)
 # check_time은 월요일 기준, 이틀 전 토요일 (google sheet에서 날짜 구분해주는 값)
-vote_post_time = (datetime.today() - timedelta(hours=46)).strftime('%Y-%m-%d %H:%M:%S')
-vote_post_time_ex = (datetime.today() - timedelta(days=7)).strftime('%Y-%m-%d %H:%M:%S')
+
 
 # datetime을 timestamp로 바꾸는 함수
 def datetime_to_timestamp(dst_time):
-	return time.mktime(datetime.strptime(dst_time, '%Y-%m-%d %H:%M:%S').timetuple())
+	return time.mktime(datetime.strptime(str(dst_time), '%Y-%m-%d %H:%M:%S').timetuple())
 
 class TimeStr:
 	# 민수가 쓸 시간 (함수 구현 시, 함수를 돌릴 수 있게 two_dayago_ts_ex를 만들어놨다.)
-	vote_post_ts = datetime_to_timestamp(vote_post_time)
-	vote_post_ts_ex = datetime_to_timestamp(vote_post_time_ex)
+	vote_post_time = (datetime.today() - timedelta(hours=46)).strftime('%Y-%m-%d %H:%M:%S')
+	vote_post_time_ex = (datetime.today() - timedelta(days=8)).strftime('%Y-%m-%d %H:%M:%S')
 	# 포맷) 04/02
 	vote_check_time = (datetime.today() - timedelta(days=2)).strftime('%m/%d')
 	question_check_time = (datetime.today() - timedelta(days=13)).strftime('%m/%d')

@@ -9,10 +9,11 @@ users_name = si.UserID.users_name
 
 # get_vote_users(st.TimeStr.twodayago_ts_ex)
 # 돌아가는 시간은 월요일 저녁 22시
-def get_vote_users(timestamp):
+def get_vote_users(date_time):
 	total_users = []
 	attend_users_id = []
 	absent_users_id = []
+	timestamp = st.datetime_to_timestamp(date_time)
 	total_users_chk = [0 for _ in range(len(users_name))]
 	vote_history = client.conversations_history(channel=si.ChannelID.announcement, oldest=timestamp)
 
@@ -27,6 +28,7 @@ def get_vote_users(timestamp):
 		total_users_chk[users_name.index(users)] = 1
 	return total_users_chk
 
+
 # 돌아가는 시간은 금요일 저녁 22시
 def get_question_users():
 	total_users_chk = [0 for _ in range(len(users_name))]
@@ -34,3 +36,5 @@ def get_question_users():
 	for users in question_users:
 		total_users_chk[users_name.index(si.UserID.user_id_to_name[users])] = 1
 	return total_users_chk
+
+

@@ -1,4 +1,6 @@
 import src.src_info as si
+import ssl
+ssl._create_default_https_context = ssl._create_unverified_context
 import src.src_time as st
 import slack_get as sk_get
 import time
@@ -32,7 +34,7 @@ def write_vote_later(col_num1, col_num2, row_num1, row_num2, vote_later_data):
         pos1 = chr(col_num1 + ord('A')) + str(row_num1)
         pos2 = chr(col_num2 + ord('A')) + str(row_num2)
         flag = 0
-        if (vote_bit == 1):
+        if (vote_bit == 0):
             flag = 1
         input_function = "= CONCATENATE(%d, IF(0, IF(\'북라톤 출석부\'!%s = \"X\", \"0\", \"1\"), \"0\"), IF(\'북라톤 출석부\'!%s = \"△\", \"1\", \"0\"))" % (flag, pos2, pos2)
         print(pos1, "\t<=  \"", input_function, "\"")
@@ -54,7 +56,7 @@ def write_question_later(col_num1, col_num2, row_num1, row_num2, question_later_
         if (bits_data[i][0] == '1'):
             vote_flag = 1
         question_flag = 0
-        if (question_bit == 1):
+        if (question_bit == 0):
             question_flag = 1
         input_function = "= CONCATENATE(%d, IF(%d, IF(\'북라톤 출석부\'!%s = \"X\", \"0\", \"1\"), \"0\"), IF(\'북라톤 출석부\'!%s = \"△\", \"1\", \"0\"))" % (vote_flag, question_flag, pos2, pos2)
         print(pos1, "\t<=  \"", input_function, "\"")
@@ -84,7 +86,8 @@ def send_later(timestr, later_data, data_type):
 #  send_later(sk_get.get_vote_users(st.TimeStr.vote_check_time_ts_ex), [0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0], 'v')
 #  send_later('04/02', [0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1], 'q')
 
-#  send_later(sk_get.get_vote_users('04/02'), sk_get.get_vote_users(datetime.datetime(2022, 3, 19)), 'v')
+send_later('04/02', sk_get.get_vote_users(datetime.datetime(2022, 3, 19)), 'v')
 
-print(sk_get.get_vote_users(datetime.datetime(2022, 3, 19)))
+
+#print(sk_get.get_vote_users(datetime.datetime(2022, 3, 19)))
 #  send_later('04/02', , 'q')

@@ -8,7 +8,9 @@
 from slack import WebClient
 import src.src_info as si
 import src.src_post as sp
+import src.src_time as st
 import slack_penalty
+import slack_get
 
 client = WebClient(si.BotOAuth.bot_token)
 
@@ -20,7 +22,12 @@ def post_message(channel, blocks):
 
 
 #post_message(si.ChannelID.cash_fit,sp.PostStatement.attend_vote_state)
-post_message(si.ChannelID.cash_fit, slack_penalty.make_penalty())
+#post_message(si.ChannelID.cash_fit, slack_penalty.make_penalty())
+
+
+print(slack_get.get_vote_users(st.TimeStr.vote_post_ts_ex))
+
+
 # ===================================================================
 # def post_to_slack(message, webhook_url):
 # 	slack_data = json.dumps({'blocks': message}) 
