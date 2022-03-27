@@ -2,6 +2,7 @@ import src.src_info as si
 import src.src_time as st
 import slack_get as sk_get
 import time
+import datetime
 
 # 벌금 공지
 # 북라톤 출석부
@@ -76,10 +77,14 @@ def send_later(timestr, later_data, data_type):
     else:
         print("data_type error(ex. 'v or 'q')")
 
-#  print(sk_get.get_vote_users(st.TimeStr.vote_check_time_ts_ex))
+#  print())
 #  send_later('04/02', sk_get.get_vote_users(st.TimeStr.vote_check_time_ts_ex), 'v')
 #  bits_data = worksheet1.col_values(0 + col_offset1 + 1)[row_offset1:]
 #  send_later('04/02', [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 'v')
-send_later('04/02', [0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0], 'v')
-send_later('04/02', [0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1], 'q')
+#  send_later(sk_get.get_vote_users(st.TimeStr.vote_check_time_ts_ex), [0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0], 'v')
+#  send_later('04/02', [0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1], 'q')
 
+#  send_later(sk_get.get_vote_users('04/02'), sk_get.get_vote_users(datetime.datetime(2022, 3, 19)), 'v')
+
+print(sk_get.get_vote_users(datetime.datetime(2022, 3, 19)))
+#  send_later('04/02', , 'q')
