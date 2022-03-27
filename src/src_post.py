@@ -11,21 +11,21 @@ class slack_format:
 		"type" : "section",
 		"text" : {
 			"type" : "mrkdwn",
-			"text" : ""
+			"text" : " "
 		}
 	}
 	question_format = {
 		"type" : "section",
 		"text" : {
 			"type" : "mrkdwn",
-			"text" : ""
+			"text" : " "
 		}
 	}
 	attend_format = {
 		"type" : "section",
 		"text" : {
 			"type" : "mrkdwn",
-			"text" : ""
+			"text" : " "
 		}
 	}
 

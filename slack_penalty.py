@@ -3,7 +3,7 @@
 # 자료구조에 따라 call by refernce인 지, by value인 지 달라진다. 
 # dict은 가변변수라 call by reference이다. 그래서 자꾸 그 안에 값이 바뀌는 것. 
 
-import getLater as gl
+import google_get as gl
 import src.src_time as st
 import src.src_post as sp
 
@@ -13,7 +13,7 @@ scope = [
     "https://www.googleapis.com/auth/drive",
 ]
 json_key_path = "./richstudy-b474b3ff05a8.json"	# JSON Key File Path
-spreadsheet_url = "https://docs.google.com/spreadsheets/d/1DuBSkKT665lYLiatWSIZ94NssrhH5ErJQheUdFuPYKk/edit#gid=2139714808"
+spreadsheet_url = "https://docs.google.com/spreadsheets/d/1DuBSkKT665lYLiatWSIZ94NssrhH5ErJQheUdFuPYKk/edit#gid=1448048049"
 
 penalty = sp.PostStatement.penalty_state
 vote_later, question_later, attend_later = gl.get_later('04/02')
@@ -33,7 +33,16 @@ def make_penalty():
 	question = make_format1(sp.slack_format.question_format, question_later)
 	attend = make_format2(sp.slack_format.attend_format, attend_later)
 	
+	print(vote)
+	print()
+	print(question)
+	print()
+	print(attend)
+	print()
+
 	penalty.insert(3, vote)
 	penalty.insert(5, question)
 	penalty.insert(7, attend)
+
+	print(penalty)
 	return (penalty)

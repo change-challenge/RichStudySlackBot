@@ -108,7 +108,7 @@ class UserID:
 				"한수경" : "U027382N5K7",
 	}
 
-minsu_MSI_key = "richstudy-c771b0080ee8.json"   # JSON Key File Path...minsu
+minsu_MSI_key = "./richstudy-b474b3ff05a8.json"   # JSON Key File Path...minsu
 json_key_path = minsu_MSI_key
 spreadsheet_url = "https://docs.google.com/spreadsheets/d/1DuBSkKT665lYLiatWSIZ94NssrhH5ErJQheUdFuPYKk/edit#gid=2139714808"
 
