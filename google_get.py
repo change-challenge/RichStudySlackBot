@@ -1,9 +1,7 @@
 import src.src_info as si
 import src.src_time as st
-#<<<<<<<<<<<<<<delete
 from datetime import datetime, timedelta
 import time
-#<<<<<<<<<<<<<<
 
 #수정은 src/
 worksheet = si.import_googlesheet('벌금명단')

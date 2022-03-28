@@ -2,6 +2,14 @@
 from oauth2client.service_account import ServiceAccountCredentials
 import gspread
 
+scope = [
+    "https://spreadsheets.google.com/feeds",
+    "https://www.googleapis.com/auth/drive",
+]
+minsu_MSI_key = "./config/richstudy-b474b3ff05a8.json"   # JSON Key File Path...minsu
+json_key_path = minsu_MSI_key
+spreadsheet_url = "https://docs.google.com/spreadsheets/d/1DuBSkKT665lYLiatWSIZ94NssrhH5ErJQheUdFuPYKk/edit#gid=1448048049"
+
 class WebHookUrl:
 	announcement_webhook = "https://hooks.slack.com/services/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"
 	question_webhook = "https://hooks.slack.com/services/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"
@@ -107,11 +115,6 @@ class UserID:
 				"하승희" : "U02RU5T3KSS",
 				"한수경" : "U027382N5K7",
 	}
-
-minsu_MSI_key = "./richstudy-b474b3ff05a8.json"   # JSON Key File Path...minsu
-json_key_path = minsu_MSI_key
-spreadsheet_url = "https://docs.google.com/spreadsheets/d/1DuBSkKT665lYLiatWSIZ94NssrhH5ErJQheUdFuPYKk/edit#gid=2139714808"
-
 
 def import_googlesheet(tab):
     scope = [

@@ -23,9 +23,7 @@ def post_message(channel, blocks):
 
 #post_message(si.ChannelID.cash_fit,sp.PostStatement.attend_vote_state)
 #post_message(si.ChannelID.cash_fit, slack_penalty.make_penalty())
-
-
-print(slack_get.get_vote_users(st.TimeStr.vote_post_ts_ex))
+# print(slack_get.get_vote_users(st.TimeStr.vote_post_ts_ex))
 
 
 # ===================================================================

@@ -1,6 +1,8 @@
 from datetime import datetime, timedelta
 import time
-import src.src_time as st
+import src_time as st
+import src_info as si
+import google_get as gg
 # CERTIFICATE_VERIFY_FAILED 발생시 추가
 import ssl
 ssl._create_default_https_context = ssl._create_unverified_context
@@ -147,3 +149,24 @@ class PostStatement:
 				"text": "모든 벌금은 *"+ st.TimeStr.penalty_time_str + " (금) 23시 59분까지*  내야합니다.\n*기간 안에 내지 않으면, x2* 가 됩니다. 😢\n\n*벌금 내신 분들은 이 글에 이모지✅* 를 달아주세요.\n\n"
 				}
 		}]
+
+def make_format1(slack, later_users):
+	for users in later_users:
+		slack["text"]["text"] += "- " + users + "씨 벌금 4,000원\n"
+	return (slack)
+
+def make_format2(slack, later_users):
+	for users in later_users:
+		slack["text"]["text"] += "- " + users + "씨 벌금 5,000원\n"
+	return (slack)
+
+def make_penalty():
+	penalty = PostStatement.penalty_state
+	vote_later, question_later, attend_later = gg.get_later('04/02')
+	vote = make_format1(slack_format.vote_format, vote_later)
+	question = make_format1(slack_format.question_format, question_later)
+	attend = make_format2(slack_format.attend_format, attend_later)
+	penalty.insert(3, vote)
+	penalty.insert(5, question)
+	penalty.insert(7, attend)
+	return (penalty)
