@@ -8,14 +8,15 @@ import src.src_info as si
 import slack_post
 import slack_get
 import google_send
+from pytz import timezone
 
 col_offset1 = 2
 row_offset1 = 4
 worksheet1 = si.import_googlesheet('2022년 상반기 벌금명단')
 
 if __name__ == "__main__":
-	today = datetime.today()
-	slack_post.post_message(si.ChannelID.cash_fit, sp.PostStatement.question_state)
+	today = datetime.now(timezone('Asia/Seoul'))
+	slack_post.post_message(si.ChannelID.cash_fit, sp.make_penalty())
 	# 월요일 
 	if (st.get_timeidx(col_offset1, row_offset1, worksheet1, st.TimeStr.vote_check_time(today)) != -1):
 		if (today.hour == 12):
@@ -23,7 +24,7 @@ if __name__ == "__main__":
 			print("==========[Slack] 벌금 글 작성 완료==========")
 			print("시간 : " + today.strftime('%c'))
 		elif (today.hour == 22):
-			google_send.send_later(st.TimeStr.vote_check_time, slack_get.get_vote_users(st.TimeStr.vote_post_time(today)),'v')
+			google_send.send_later(st.TimeStr.vote_check_time(today), slack_get.get_vote_users(st.TimeStr.vote_post_time(today)),'v')
 			print("==========[Google Sheet] 참석투표 지각자 체크 완료==========")
 			print("지각자 리스트 : " + slack_get.get_vote_users(st.TimeStr.vote_check_time(today)))
 			print("시간 : " + today.strftime('%c'))
@@ -33,12 +34,13 @@ if __name__ == "__main__":
 	# 금요일 
 	elif (st.get_timeidx(col_offset1, row_offset1, worksheet1, st.TimeStr.question_check_time(today)) != -1):
 		if (today.hour == 22):
-			google_send.send_later(st.TimeStr.question_check_time, slack_get.get_question_users(), 'q')
+			google_send.send_later(st.TimeStr.question_check_time(today), slack_get.get_question_users(), 'q')
 			print("==========[Google Sheet] 질문선정 지각자 체크 완료==========")
 			print("지각자 리스트 : " + slack_get.get_question_users())
 			print("시간 : " + today.strftime('%c'))
 		else:
 			print("==========[금요일 시간 오류]==========")
+			print("st.TimeStr.question_check_time(today) : " + st.TimeStr.question_check_time(today))
 			print("시간 : " + today.strftime('%c'))
 	# 일요일
 	elif (st.get_timeidx(col_offset1, row_offset1, worksheet1, st.TimeStr.slack_post_check_time(today)) != -1):

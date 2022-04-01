@@ -11,6 +11,8 @@ import time
 # bookrathon_time_src은 일요일 기준, 다음주 토요일 (북라톤 날짜)
 # check_time은 월요일 기준, 이틀 전 토요일 (google sheet에서 날짜 구분해주는 값)
 
+from pytz import timezone
+
 # datetime을 timestamp로 바꾸는 함수
 def datetime_to_timestamp(dst_time):
 	return time.mktime(datetime.strptime(str(dst_time), '%Y-%m-%d %H:%M:%S').timetuple())
@@ -27,11 +29,11 @@ class TimeStr:
 	def slack_post_check_time(dst_time):
 		return (dst_time - timedelta(days=1)).strftime('%m/%d')
 	# 포맷) 2022년 04월 02일
-	nowtime_str = datetime.today().strftime('%Y년 %m월 %d일')
-	penalty_time_str = (datetime.today() + timedelta(days=4)).strftime('%Y년 %m월 %d일')
-	attend_time_str = (datetime.today() + timedelta(days=1)).strftime('%Y년 %m월 %d일')
-	question_time_str = (datetime.today() + timedelta(days=12)).strftime('%Y년 %m월 %d일') 
-	bookrathon_time_str = (datetime.today() + timedelta(days=13)).strftime('%Y년 %m월 %d일')
+	nowtime_str = datetime.now(timezone('Asia/Seoul')).strftime('%Y년 %m월 %d일')
+	penalty_time_str = (datetime.now(timezone('Asia/Seoul')) + timedelta(days=4)).strftime('%Y년 %m월 %d일')
+	attend_time_str = (datetime.now(timezone('Asia/Seoul')) + timedelta(days=1)).strftime('%Y년 %m월 %d일')
+	question_time_str = (datetime.now(timezone('Asia/Seoul')) + timedelta(days=12)).strftime('%Y년 %m월 %d일') 
+	bookrathon_time_str = (datetime.now(timezone('Asia/Seoul')) + timedelta(days=13)).strftime('%Y년 %m월 %d일')
 
 def get_timeidx(col_offset, rol_offset, worksheet, check_time):
     row_data = worksheet.row_values(rol_offset)[col_offset:]
