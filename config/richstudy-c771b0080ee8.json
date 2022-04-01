@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "richstudy",
+  "private_key_id": "c771b0080ee8643ad85d24f0f9344c22b06b3529",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQC14bb1EXf1vhvh\nAzSyGhVzaBtf1MEROt7EHNfo8DVc4/yYxOMlPOghNqOqZ6fhxui5w3gCN7vstlir\nWzRqj9egJQK9XCZo/9VxIUyz6ICeOkZDNwpF65eOB6fu/pPO5JNZy0QpviHyt7S/\nSQXmYlaNlpkdyl3ZF9G3Am3VoGz9CP2d9L+nSpbGj32yw4MLmqakKKlh+EyU+HKV\no+K96KKw7AFORTTxKdVtWxIDQ+FWxVnZUy/qBF57cV6S+C0sUM0rQVAUxIAWF0jG\nSAgE+3mTU/wN6fGlwkY4+QuSQbpPjL78fXTg/Ax2jl+FQOxhsJ62yNgFwfvo/zEg\npZS0KfmbAgMBAAECggEANXwSmS5x4EnvWNPggx84f591rVCbFb4CFBmHRHCewJoq\nhaIgSasHd/zhVBL3Q2WCul3IxJ4vHQTiPkGrwEpcVjOMArM+eFIDKilorN8KM31f\nfBSLaNRG1PVbZORoAsckrZsgiEXpJb7v3/BRU9ZHLYvDqwb/Yf+nI/IK6m8qnZ2w\nTPro8cww+UurPNkhXoIA783em4WKaZOoIfKZCjUU9/gaARUlxXcVVya0Olvfv1yE\npD7x8VtMJ9L/ZtxyXSqazS7iZjzXMK3gADeFirpTfXMJXWQ7CmJbIEIuuBM51bdy\nwaeAZ7gG7YoIchTijSY8zbbbCfS2LZ526bcf4X50AQKBgQDZu0LeCTZKO5UhsMiU\n1tUfUmhcrErZWEWq2OHtqRjK+t9Cm5TWLu67sMs0UTkmLrZndhAnETEQl0bI+5wN\nC1zLBU6hb6uivNvYwbl/PGTzNw97p8YUxMfDGWLA5k3v5ju9r+mU8lsvMT0jykhH\n/RX9iarOyXIcEVG0c1J2zims2wKBgQDV2Wgopfsu0jjkIWCnHhd3/iJMzCa6xG2u\n5wQfayBnoyxHxKjXIDa0ziYVlBKsV5wfwQyLBX6kPu47+4UFwLbnlYHUuiX4RHFO\ndmBWYe9ITYQQz812B5anOEbsRovw+WYlamiz11mTjZEgk8s0QMf665uHXXiSxGGo\nWdLvqeAiQQKBgF770EnonuR3ZbGS244CwmqtmpWDHAwA9DN59eWl9QjntGnsUVu2\nkbMThzJFlLbRfgVYfedtGohwVhLroMIYCN0QbaMDgk62MPo4WOHmyOtJQ9nf8Quy\nZKr58hjQ34MeX0V67l1p9Nl7k35/ilTNVcCLRBZ9zufrrkcYYAswGQItAoGAB+WD\nRxz57XytxR7GZuVhkHi944AWXgcq1a6KJG7cP3dzByNn6Kmz23FRTrKtDdgeV73V\nLL0DNCVuvqBHBTNcjaijpqtJA6XjWTZd0FLFdzIFkmlZ+OXG1l3poIfqWveaof8P\n5rQpBp3PohhTBJbvy4Avugvli+XchU7rzxXCxQECgYB8AjRnDh5P2UkkjAnsHaBU\niiRH3oW6zfigCwNimwfOplK0lOnhjHXhspsfSROVGyXoP18Hivv81AwdTTJQg8gs\n/1DHxuesanwrtJK+yBw40+WKh0cRtlT00AyZUP7BETiErWhqVCQJiBomYJGenTXW\nxzgkf4aIkCEzadUl6kj1iw==\n-----END PRIVATE KEY-----\n",
+  "client_email": "rich-study@richstudy.iam.gserviceaccount.com",
+  "client_id": "105504504793697568988",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/rich-study%40richstudy.iam.gserviceaccount.com"
+}
