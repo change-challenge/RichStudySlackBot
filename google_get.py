@@ -4,7 +4,7 @@ from datetime import datetime, timedelta
 import time
 
 #수정은 src/
-worksheet = si.import_googlesheet('벌금명단')
+worksheet = si.import_googlesheet('2022년 상반기 벌금명단')
 #날짜 기준
 col_offset = 2
 row_offset = 4

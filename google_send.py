@@ -3,7 +3,6 @@ import ssl
 ssl._create_default_https_context = ssl._create_unverified_context
 import src.src_time as st
 import slack_get as sk_get
-import time
 import datetime
 
 # 벌금 공지
@@ -13,7 +12,7 @@ col_offset1 = 2
 row_offset1 = 4
 col_offset2 = 3
 row_offset2 = 4
-worksheet1 = si.import_googlesheet('벌금명단')
+worksheet1 = si.import_googlesheet('2022년 상반기 벌금명단')
 worksheet2 = si.import_googlesheet('북라톤 출석부')
 
 def covert_timestr_to_colnum(timestr):
@@ -44,26 +43,27 @@ def write_vote_later(col_num1, col_num2, row_num1, row_num2, vote_later_data):
         #  time.sleep(0.25);                            # 사람이 너무 많아지면 필요할 수도 있음
 
 def write_question_later(col_num1, col_num2, row_num1, row_num2, question_later_data):
-    bits_data = worksheet1.col_values(col_num1 + 1)[row_offset1:]
-    print("@@@@@@@@@@@가져온 기존 데이터@@@@@@@@@@@")
-    print(bits_data, "\n")
-    i = 0
-    print("@@@@@@@@@@@구글 시트 작성@@@@@@@@@@@")
-    for question_bit in question_later_data:
-        pos1 = chr(col_num1 + ord('A')) + str(row_num1)
-        pos2 = chr(col_num2 + ord('A')) + str(row_num2)
-        vote_flag = 0
-        if (bits_data[i][0] == '1'):
-            vote_flag = 1
-        question_flag = 0
-        if (question_bit == 0):
-            question_flag = 1
-        input_function = "= CONCATENATE(%d, IF(%d, IF(\'북라톤 출석부\'!%s = \"X\", \"0\", \"1\"), \"0\"), IF(\'북라톤 출석부\'!%s = \"△\", \"1\", \"0\"))" % (vote_flag, question_flag, pos2, pos2)
-        print(pos1, "\t<=  \"", input_function, "\"")
-        worksheet1.update_acell(pos1, input_function)
-        row_num1 += 1
-        row_num2 += 1
-        i += 1
+	bits_data = worksheet1.col_values(col_num1 + 1)[row_offset1:]
+	print("@@@@@@@@@@@가져온 기존 데이터@@@@@@@@@@@")
+	print(bits_data, "\n")
+	i = 0
+	print("@@@@@@@@@@@구글 시트 작성@@@@@@@@@@@")
+	for question_bit in question_later_data:
+		pos1 = chr(col_num1 + ord('A')) + str(row_num1)
+		pos2 = chr(col_num2 + ord('A')) + str(row_num2)
+		vote_flag = 0
+		if (bits_data[i][0] == '1'):
+			vote_flag = 1
+		question_flag = 0
+		if (question_bit == 0):
+			question_flag = 1
+        #input_function = "= CONCATENATE(%d, IF(%d, IF(OR(\'북라톤 출석부\'!%s = \"X\",\'북라톤 출석부\'!%s = ""), \"0\", \"1\"), \"0\"), IF(\'북라톤 출석부\'!%s = \"△\", \"1\", \"0\"))" % (vote_flag, question_flag, pos2, pos2, pos2)
+		input_function = "= CONCATENATE(%d, IF(%d, IF(OR(\'북라톤 출석부\'!%s = \"X\",\'북라톤 출석부\'!%s = \"\"), \"0\", \"1\"), \"0\"), IF(\'북라톤 출석부\'!%s = \"△\", \"1\", \"0\"))" % (vote_flag, question_flag, pos2, pos2, pos2)
+		print(pos1, "\t<=  \"", input_function, "\"")
+		worksheet1.update_acell(pos1, input_function)
+		row_num1 += 1
+		row_num2 += 1
+		i += 1
         #  time.sleep(0.25);                            # 사람이 너무 많아지면 필요할 수도 있음
 
 def send_later(timestr, later_data, data_type):
@@ -86,8 +86,8 @@ def send_later(timestr, later_data, data_type):
 #  send_later(sk_get.get_vote_users(st.TimeStr.vote_check_time_ts_ex), [0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0], 'v')
 #  send_later('04/02', [0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1], 'q')
 
-send_later('04/02', sk_get.get_vote_users(datetime.datetime(2022, 3, 19)), 'v')
-
+#send_later('04/02', sk_get.get_vote_users(datetime.datetime(2022, 3, 19)), 'v')
+send_later('04/02', sk_get.get_question_users(), 'q')
 
 #print(sk_get.get_vote_users(datetime.datetime(2022, 3, 19)))
 #  send_later('04/02', , 'q')
