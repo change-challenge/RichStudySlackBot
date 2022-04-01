@@ -17,11 +17,15 @@ def datetime_to_timestamp(dst_time):
 
 class TimeStr:
 	# 민수가 쓸 시간 (함수 구현 시, 함수를 돌릴 수 있게 two_dayago_ts_ex를 만들어놨다.)
-	vote_post_time = (datetime.today() - timedelta(hours=46)).strftime('%Y-%m-%d %H:%M:%S')
-	vote_post_time_ex = (datetime.today() - timedelta(days=15)).strftime('%Y-%m-%d %H:%M:%S')
+	def vote_post_time(dst_time):
+		return (dst_time - timedelta(hours=46)).strftime('%Y-%m-%d %H:%M:%S')
 	# 포맷) 04/02
-	vote_check_time = (datetime.today() - timedelta(days=2)).strftime('%m/%d')
-	question_check_time = (datetime.today() - timedelta(days=13)).strftime('%m/%d')
+	def vote_check_time(dst_time):
+		return (dst_time + timedelta(days=12)).strftime('%m/%d')
+	def question_check_time(dst_time):
+		return (dst_time + timedelta(days=1)).strftime('%m/%d')
+	def slack_post_check_time(dst_time):
+		return (dst_time - timedelta(days=1)).strftime('%m/%d')
 	# 포맷) 2022년 04월 02일
 	nowtime_str = datetime.today().strftime('%Y년 %m월 %d일')
 	penalty_time_str = (datetime.today() + timedelta(days=4)).strftime('%Y년 %m월 %d일')

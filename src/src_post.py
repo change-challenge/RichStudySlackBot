@@ -1,7 +1,4 @@
-from datetime import datetime, timedelta
-import time
-import src_time as st
-import src_info as si
+import src.src_time as st
 import google_get as gg
 # CERTIFICATE_VERIFY_FAILED 발생시 추가
 import ssl
@@ -60,10 +57,11 @@ class PostStatement:
 			"type": "section",
 			"text": {
 				"type": "mrkdwn",
-				"text": "다음 북라톤 참여 여부를 위해 투표를 진행하려고 해요.\n *🤩: 참석  😭: 불참* 에 투표해주세요.\n\n*참석 못 하시는 분들은 <@U01R3U5FQL8> 카톡으로 사유* 를 말씀해주시고,\n *조가 정해지면 조장에게* 말씀해주시면 됩니다.\n\n*양희재 (010-2911-1973)*"
+				"text": "다음 북라톤 참여 여부를 위해 투표를 진행하려고 해요.\n *🤩: 참석  😭: 불참* 에 투표해주세요.\n\n*참석 못 하시는 분들은 <@U01QEPH2TP1> 카톡으로 사유* 를 말씀해주시고,\n *조가 정해지면 조장에게* 말씀해주시면 됩니다.\n\n*양희재 (010-2911-1973)*"
 				}
 		}
 	]
+	# 호진 ID : U01R3U5FQL8
 	# 희재 ID : U01QEPH2TP1
 	question_state = [
 		{

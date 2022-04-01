@@ -31,16 +31,16 @@ def get_later(timestr):
 
 
 #  v, q, a = get_later(st.TimeStr.check_time)
-v, q, a = get_later('04/02')
-print("투표 지각 :")
-print(v)
-print()
-print("질문 지각 :")
-print(q)
-print()
-print("참석 지각 :")
-print(a)
-print()
+#v, q, a = get_later('04/02')
+#print("투표 지각 :")
+#print(v)
+#print()
+#print("질문 지각 :")
+#print(q)
+#print()
+#print("참석 지각 :")
+#print(a)
+#print()
 
 #------------------------
 
