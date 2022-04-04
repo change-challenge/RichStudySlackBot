@@ -19,8 +19,4 @@ from pytz import timezone
 
 
 client = WebClient(si.BotOAuth.bot_token)
-
-# print(slack_get.get_book_recomd_point())
-# a = datetime.now(timezone('Asia/Seoul')) - relativedelta(months = 1)
-# print(a.month)
 client.chat_postMessage(channel=si.ChannelID.cash_fit, blocks=sp.make_book_recomd())

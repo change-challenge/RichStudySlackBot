@@ -36,7 +36,7 @@ class slack_format:
 		"type" : "section",
 		"text" : {
 			"type" : "mrkdwn",
-			"text" : " "
+			"text" : "\t"
 		}
 	}
 
@@ -161,12 +161,35 @@ class PostStatement:
 		}]
 	book_recomd_state = [
 		{
+			"type": "context",
+			"elements": [
+				{
+					"type": "mrkdwn",
+					"text": "@here"
+				}
+			]
+		},
+		{
 			"type": "header",
 				"text": {
 					"type": "plain_text",
-					"text": "*[:coin: " + str((datetime.now(timezone('Asia/Seoul')) - relativedelta(months = 1)).month) + " 월 책 추천 - 부자칩 보상] \n\n"
+					"text": "[ :coin: " + str((datetime.now(timezone('Asia/Seoul')) - relativedelta(months = 1)).month) + "월 책 추천 - 부자칩 보상] \n\n"
 				}
 		},
+		{
+			"type": "section",
+			"text": {
+				"type": "mrkdwn",
+				"text": "부자칩을 받으신 모든 분들 축하합니다. 🥳🥳"
+				}
+		},
+		{
+			"type": "section",
+			"text": {
+				"type": "mrkdwn",
+				"text": "부자스터디에서 *`나누기는 곱하기`* 가 됩니다. \n여러분의 *경험과 지식을 나눌수록 더 채워지는 것* 을 느끼실거예요!😎\n\n"
+				}
+		}
 	]
 
 def make_format1(slack, later_users):
@@ -198,7 +221,9 @@ def make_book_recomd():
 	idx = 0
 	for point in book_point:
 		if (point > 0):
-			book_add_post["text"]["text"] += "• *" + si.UserID.users_name[idx] + "* : " + str(point) + "개\n"
+			if (point == 1):
+				point = int(point)
+			book_add_post["text"]["text"] += "> • *" + si.UserID.users_name[idx] + "* : " + str(point) + "개\n"
 		idx += 1
-	book_recomd.insert(1, book_add_post)
+	book_recomd.insert(2, book_add_post)
 	return (book_recomd)
