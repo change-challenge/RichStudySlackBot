@@ -23,7 +23,7 @@ class BotOAuth:
 
 class ChannelID:
 	announcement = "C01PZAK0NGP"
-	book_rec = "C02M3SU81K2"
+	book_recomd = "C02M3SU81K2"
 	question = "C027UQYFH8U"
 	penalty = "C029TP5DS0G"
 	cash_fit = "C02QY3M5F7H"
@@ -58,7 +58,36 @@ class UserID:
 				"하승희",
 				"한수경"
 			]
-	user_id_to_name = {
+	users_id = {
+				"U02RL2XV4KH",
+				"U02RTQ2NXKQ",
+				"U02LE7HKCE6",
+				"U027JQK00KB",
+				"U01QT3KFU4D",
+				"U026RFKEN3H",
+				"U02733TKY9K",
+				"U02S33JRS9J",
+				"U02S4TERJ5S",
+				"U02S2LM4LP4",
+				"U02S0M72N82",
+				"U01QMTD1K37",
+				"U02S2PVS3B6",
+				"U01QSTF6M18",
+				"U02RU9NTCA2",
+				"U01QEPH2TP1",
+				"U01QLRF7MJ6",
+				"U02AKLMDSRE",
+				"U02RTS9357G",
+				"U01R3U5FQL8",
+				"U02S3UAPS9J",
+				"U02SR22Q9MW",
+				"U02727PASNS",
+				"U032CUPKA95",
+				"U02S0ER3W9H",
+				"U02RU5T3KSS",
+				"U027382N5K7"
+			}
+	users_id_to_name = {
 				"U02RL2XV4KH" : "강동운",
 				"U02RTQ2NXKQ" : "김가현",
 				"U02LE7HKCE6" : "김민수",
@@ -87,7 +116,7 @@ class UserID:
 				"U02RU5T3KSS" : "하승희",
 				"U027382N5K7" : "한수경"
 			}
-	user_name_to_id = {
+	users_name_to_id = {
 				"강동운" : "U02RL2XV4KH",
 				"김가현" : "U02RTQ2NXKQ",
 				"김민수" : "U02LE7HKCE6",
