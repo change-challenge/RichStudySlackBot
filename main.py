@@ -16,7 +16,6 @@ worksheet1 = si.import_googlesheet('2022년 상반기 벌금명단')
 
 if __name__ == "__main__":
 	today = datetime.now(timezone('Asia/Seoul'))
-	slack_post.post_message(si.ChannelID.cash_fit, sp.make_penalty())
 	# 월요일 
 	if (st.get_timeidx(col_offset1, row_offset1, worksheet1, st.TimeStr.vote_check_time(today)) != -1):
 		if (today.hour == 12):

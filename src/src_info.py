@@ -7,7 +7,8 @@ scope = [
     "https://www.googleapis.com/auth/drive",
 ]
 minsu_MSI_key = "/home/ubuntu/RichStudySlackBot/config/richstudy-b474b3ff05a8.json"   # JSON Key File Path...minsu
-json_key_path = minsu_MSI_key
+cluster_key = "/Users/hchang/Desktop/RichStudySlackBot/config/richstudy-b474b3ff05a8.json"
+json_key_path = cluster_key
 spreadsheet_url = "https://docs.google.com/spreadsheets/d/1DuBSkKT665lYLiatWSIZ94NssrhH5ErJQheUdFuPYKk/edit#gid=1448048049"
 
 class WebHookUrl:
