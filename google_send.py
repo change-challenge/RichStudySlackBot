@@ -79,6 +79,24 @@ def send_later(date_time, later_data, data_type):
     else:
         print("data_type error(ex. 'v or 'q')")
 
+
+def send_richchip():
+    col_chip_offset = 18
+    row_chip_offset = 5
+    book_point = sk_get.get_book_recomd_point()
+    idx = 0
+    for point in book_point:
+        if (point > 0):
+            location = chr(col_chip_offset + ord('A')) + str(row_chip_offset)
+            if (worksheet2.col_values(col_chip_offset+1)[row_chip_offset-1] == ""):
+                data = "%.1f" %(point)
+            else:
+                old_point = float(worksheet2.col_values(col_chip_offset+1)[row_chip_offset-1])
+                data = "= %.1f + %.1f" %(old_point, point)
+            worksheet2.update_acell(location, data)
+        row_chip_offset += 1
+
+
 #  print())
 #  send_later('04/02', sk_get.get_vote_users(st.TimeStr.vote_check_time_ts_ex), 'v')
 #  bits_data = worksheet1.col_values(0 + col_offset1 + 1)[row_offset1:]

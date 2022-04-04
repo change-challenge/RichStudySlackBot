@@ -6,17 +6,24 @@
 
 from slack import WebClient
 from datetime import datetime
+from pytz import timezone
 import src.src_time as st
-import src.src_post as sp
 import src.src_info as si
+import src.src_post as sp
 import slack_post
 import slack_get
 import google_send
 
-
 from dateutil.relativedelta import relativedelta
 from pytz import timezone
 
+today = datetime.now(timezone('Asia/Seoul'))
 
-client = WebClient(si.BotOAuth.bot_token)
-client.chat_postMessage(channel=si.ChannelID.cash_fit, blocks=sp.make_book_recomd())
+if __name__ == "__main__":
+	# 매월 첫 날 오후 12시 
+	if (today.day == 1):
+		slack_post.post_message(channel=si.ChannelID.book_recomd, blocks=sp.make_book_recomd())
+		google_send.send_richchip()
+		print("==========[Slack] 매월 부자칩 추가 공지 완료==========")
+		print("==========[Google] 매월 부자칩 추가 작성 완료==========")
+		print("시간 : " + today.strftime('%c'))
