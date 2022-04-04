@@ -1,5 +1,10 @@
 import src.src_time as st
+import src.src_info as si
+import slack_get
 import google_get as gg
+from datetime import datetime
+from dateutil.relativedelta import relativedelta
+from pytz import timezone
 # CERTIFICATE_VERIFY_FAILED 발생시 추가
 import ssl
 ssl._create_default_https_context = ssl._create_unverified_context
@@ -25,6 +30,13 @@ class slack_format:
 		"text" : {
 			"type" : "mrkdwn",
 			"text" : " "
+		}
+	}
+	book_recomd_format = {
+		"type" : "section",
+		"text" : {
+			"type" : "mrkdwn",
+			"text" : "\t"
 		}
 	}
 
@@ -147,6 +159,38 @@ class PostStatement:
 				"text": "모든 벌금은 *"+ st.TimeStr.penalty_time_str + " (금) 23시 59분까지*  내야합니다.\n*기간 안에 내지 않으면, x2* 가 됩니다. 😢\n\n*벌금 내신 분들은 이 글에 이모지✅* 를 달아주세요.\n\n"
 				}
 		}]
+	book_recomd_state = [
+		{
+			"type": "context",
+			"elements": [
+				{
+					"type": "mrkdwn",
+					"text": "@here"
+				}
+			]
+		},
+		{
+			"type": "header",
+				"text": {
+					"type": "plain_text",
+					"text": "[ :coin: " + str((datetime.now(timezone('Asia/Seoul')) - relativedelta(months = 1)).month) + "월 책 추천 - 부자칩 보상] \n\n"
+				}
+		},
+		{
+			"type": "section",
+			"text": {
+				"type": "mrkdwn",
+				"text": "부자칩을 받으신 모든 분들 축하합니다. 🥳🥳"
+				}
+		},
+		{
+			"type": "section",
+			"text": {
+				"type": "mrkdwn",
+				"text": "부자스터디에서 *`나누기는 곱하기`* 가 됩니다. \n여러분의 *경험과 지식을 나눌수록 더 채워지는 것* 을 느끼실거예요!😎\n\n"
+				}
+		}
+	]
 
 def make_format1(slack, later_users):
 	for users in later_users:
@@ -168,3 +212,18 @@ def make_penalty():
 	penalty.insert(5, question)
 	penalty.insert(7, attend)
 	return (penalty)
+
+def make_book_recomd():
+	book_recomd = PostStatement.book_recomd_state
+	book_add_post = slack_format.book_recomd_format
+	
+	book_point = slack_get.get_book_recomd_point()
+	idx = 0
+	for point in book_point:
+		if (point > 0):
+			if (point == 1):
+				point = int(point)
+			book_add_post["text"]["text"] += "> • *" + si.UserID.users_name[idx] + "* : " + str(point) + "개\n"
+		idx += 1
+	book_recomd.insert(2, book_add_post)
+	return (book_recomd)
