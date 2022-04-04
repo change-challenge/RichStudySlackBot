@@ -15,7 +15,7 @@ from pytz import timezone
 
 # datetime을 timestamp로 바꾸는 함수
 def datetime_to_timestamp(dst_time):
-	return time.mktime(datetime.strptime(str(dst_time), '%Y-%m-%d %H:%M:%S').timetuple())
+	return time.mktime(datetime.strptime(dst_time, '%Y-%m-%d %H:%M:%S').timetuple())
 
 class TimeStr:
 	# 민수가 쓸 시간 (함수 구현 시, 함수를 돌릴 수 있게 two_dayago_ts_ex를 만들어놨다.)

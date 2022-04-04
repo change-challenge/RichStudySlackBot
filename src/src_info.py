@@ -8,7 +8,8 @@ scope = [
 ]
 minsu_MSI_key = "/home/ubuntu/RichStudySlackBot/config/richstudy-b474b3ff05a8.json"   # JSON Key File Path...minsu
 cluster_key = "/Users/hchang/Desktop/RichStudySlackBot/config/richstudy-b474b3ff05a8.json"
-json_key_path = cluster_key
+hojin_key = "/Users/hojinjang/Desktop/RichStudySlackBot/config/richstudy-b474b3ff05a8.json"
+json_key_path = hojin_key
 spreadsheet_url = "https://docs.google.com/spreadsheets/d/1DuBSkKT665lYLiatWSIZ94NssrhH5ErJQheUdFuPYKk/edit#gid=1448048049"
 
 class WebHookUrl:

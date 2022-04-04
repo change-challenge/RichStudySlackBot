@@ -16,16 +16,17 @@ worksheet1 = si.import_googlesheet('2022년 상반기 벌금명단')
 today = datetime.now(timezone('Asia/Seoul'))
 
 if __name__ == "__main__":
+	print("######################시작####################################")
 	# 월요일 
+	print("###############################시작################################")
 	if (st.get_timeidx(col_offset1, row_offset1, worksheet1, st.TimeStr.vote_check_time(today)) != -1):
 		if (today.hour == 12):
 			slack_post.post_message(si.ChannelID.penalty, sp.make_penalty())
 			print("==========[Slack] 벌금 글 작성 완료==========")
 			print("시간 : " + today.strftime('%c'))
-		elif (today.hour == 22):
+		elif (today.hour == 0):
 			google_send.send_later(st.TimeStr.vote_check_time(today), slack_get.get_vote_users(st.TimeStr.vote_post_time(today)),'v')
 			print("==========[Google Sheet] 참석투표 지각자 체크 완료==========")
-			print("지각자 리스트 : " + slack_get.get_vote_users(st.TimeStr.vote_check_time(today)))
 			print("시간 : " + today.strftime('%c'))
 		else:
 			print("==========[월요일 시간 오류]==========")
@@ -35,7 +36,6 @@ if __name__ == "__main__":
 		if (today.hour == 22):
 			google_send.send_later(st.TimeStr.question_check_time(today), slack_get.get_question_users(), 'q')
 			print("==========[Google Sheet] 질문선정 지각자 체크 완료==========")
-			print("지각자 리스트 : " + slack_get.get_question_users())
 			print("시간 : " + today.strftime('%c'))
 		else:
 			print("==========[금요일 시간 오류]==========")
@@ -54,3 +54,4 @@ if __name__ == "__main__":
 	else:
 		print("==========[요일 오류]==========")
 		print("시간 : " + today.strftime('%c'))
+	print("###############################끝################################")

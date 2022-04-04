@@ -22,7 +22,7 @@ def get_vote_users(date_time):
 	total_users_chk = [0 for _ in range(len(users_name))]
 	vote_history = client.conversations_history(channel=si.ChannelID.announcement, oldest=timestamp)
 	for result in vote_history["messages"]:
-		if ("subtype" in result):
+		if (result["user"] == "U02D1UEL81Z"):
 			attend_users_id = result["reactions"][0]["users"]
 			absent_users_id = result["reactions"][1]["users"]
 	# total_users 에는 투표한 인원(참석자 + 불참자)의 한글 이름이 정리되지 않은 상태로 있다.
