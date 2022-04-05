@@ -18,15 +18,15 @@ today = datetime.now(timezone('Asia/Seoul'))
 if __name__ == "__main__":
 	print("######################시작####################################")
 	# 월요일 
-	print("###############################시작################################")
 	if (st.get_timeidx(col_offset1, row_offset1, worksheet1, st.TimeStr.vote_check_time(today)) != -1):
 		if (today.hour == 12):
 			slack_post.post_message(si.ChannelID.penalty, sp.make_penalty())
-			print("==========[Slack] 벌금 글 작성 완료==========")
+			print("==========[Slack] 월요일 모든 벌금 글 작성==========")
 			print("시간 : " + today.strftime('%c'))
 		elif (today.hour == 22):
 			google_send.send_later(st.TimeStr.vote_check_time(today), slack_get.get_vote_users(st.TimeStr.vote_post_time(today)),'v')
-			print("==========[Google Sheet] 참석투표 지각자 체크 완료==========")
+			print("==========[Google Sheet] 월요일 참석투표 지각자 체크==========")
+			print(slack_get.get_vote_users(st.TimeStr.vote_post_time(today)))
 			print("시간 : " + today.strftime('%c'))
 		else:
 			print("==========[월요일 시간 오류]==========")
@@ -35,18 +35,18 @@ if __name__ == "__main__":
 	elif (st.get_timeidx(col_offset1, row_offset1, worksheet1, st.TimeStr.question_check_time(today)) != -1):
 		if (today.hour == 22):
 			google_send.send_later(st.TimeStr.question_check_time(today), slack_get.get_question_users(), 'q')
-			print("==========[Google Sheet] 질문선정 지각자 체크 완료==========")
+			print("==========[Google Sheet] 금요일 질문선정 지각자 체크==========")
+			print(slack_get.get_question_users())
 			print("시간 : " + today.strftime('%c'))
 		else:
 			print("==========[금요일 시간 오류]==========")
-			print("st.TimeStr.question_check_time(today) : " + st.TimeStr.question_check_time(today))
 			print("시간 : " + today.strftime('%c'))
 	# 일요일
 	elif (st.get_timeidx(col_offset1, row_offset1, worksheet1, st.TimeStr.slack_post_check_time(today)) != -1):
 		if (today.hour == 12):
 			slack_post.post_message(si.ChannelID.announcement, sp.PostStatement.attend_vote_state)
 			slack_post.post_message(si.ChannelID.question, sp.PostStatement.question_state)
-			print("==========[Slack] 공지 작성 완료==========")
+			print("==========[Slack] 일요일 공지 작성==========")
 			print("시간 : " + today.strftime('%c'))
 		else:
 			print("==========[일요일 시간 오류]==========")
