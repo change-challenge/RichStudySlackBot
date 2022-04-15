@@ -1,0 +1,44 @@
+/home/ubuntu/.local/lib/python3.8/site-packages/slack/deprecation.py:16: UserWarning: slack package is deprecated. Please use slack_sdk.web/webhook/rtm package instead. For more info, go to https://slack.dev/python-slack-sdk/v3-migration/
+  warnings.warn(message)
+######################시작####################################
+==========[요일 오류]==========
+시간 : Fri Apr  8 22:00:07 2022
+###############################끝################################
+/home/ubuntu/.local/lib/python3.8/site-packages/slack/deprecation.py:16: UserWarning: slack package is deprecated. Please use slack_sdk.web/webhook/rtm package instead. For more info, go to https://slack.dev/python-slack-sdk/v3-migration/
+  warnings.warn(message)
+######################시작####################################
+==========[요일 오류]==========
+시간 : Sun Apr 10 12:00:08 2022
+###############################끝################################
+/home/ubuntu/.local/lib/python3.8/site-packages/slack/deprecation.py:16: UserWarning: slack package is deprecated. Please use slack_sdk.web/webhook/rtm package instead. For more info, go to https://slack.dev/python-slack-sdk/v3-migration/
+  warnings.warn(message)
+######################시작####################################
+==========[요일 오류]==========
+시간 : Mon Apr 11 12:00:07 2022
+###############################끝################################
+/home/ubuntu/.local/lib/python3.8/site-packages/slack/deprecation.py:16: UserWarning: slack package is deprecated. Please use slack_sdk.web/webhook/rtm package instead. For more info, go to https://slack.dev/python-slack-sdk/v3-migration/
+  warnings.warn(message)
+######################시작####################################
+==========[요일 오류]==========
+시간 : Mon Apr 11 22:00:08 2022
+###############################끝################################
+/home/ubuntu/.local/lib/python3.8/site-packages/slack/deprecation.py:16: UserWarning: slack package is deprecated. Please use slack_sdk.web/webhook/rtm package instead. For more info, go to https://slack.dev/python-slack-sdk/v3-migration/
+  warnings.warn(message)
+######################시작####################################
+Traceback (most recent call last):
+  File "/home/ubuntu/RichStudySlackBot/main.py", line 37, in <module>
+    google_send.send_later(st.TimeStr.question_check_time(today), slack_get.get_question_users(), 'q')
+  File "/home/ubuntu/RichStudySlackBot/slack_get.py", line 39, in get_question_users
+    question_users = client.conversations_history(channel=si.ChannelID.question)["messages"][0]["reply_users"]
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/slack_sdk/web/legacy_client.py", line 2356, in conversations_history
+    return self.api_call("conversations.history", http_verb="GET", params=kwargs)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/slack_sdk/web/legacy_base_client.py", line 167, in api_call
+    return self._sync_send(api_url=api_url, req_args=req_args)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/slack_sdk/web/legacy_base_client.py", line 258, in _sync_send
+    return self._urllib_api_call(
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/slack_sdk/web/legacy_base_client.py", line 389, in _urllib_api_call
+    return SlackResponse(
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/slack_sdk/web/legacy_slack_response.py", line 222, in validate
+    raise e.SlackApiError(message=msg, response=self)
+slack_sdk.errors.SlackApiError: The request to the Slack API failed.
+The server responded with: {'ok': False, 'error': 'account_inactive'}

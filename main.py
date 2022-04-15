@@ -31,7 +31,7 @@ if __name__ == "__main__":
 		else:
 			print("==========[월요일 시간 오류]==========")
 			print("시간 : " + today.strftime('%c'))
-	# 금요일 
+	# 금요일
 	elif (st.get_timeidx(col_offset1, row_offset1, worksheet1, st.TimeStr.question_check_time(today)) != -1):
 		if (today.hour == 22):
 			google_send.send_later(st.TimeStr.question_check_time(today), slack_get.get_question_users(), 'q')

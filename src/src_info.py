@@ -12,15 +12,9 @@ hojin_key = "/Users/hojinjang/Desktop/RichStudySlackBot/config/richstudy-b474b3f
 json_key_path = minsu_MSI_key
 spreadsheet_url = "https://docs.google.com/spreadsheets/d/1DuBSkKT665lYLiatWSIZ94NssrhH5ErJQheUdFuPYKk/edit#gid=1448048049"
 
-class WebHookUrl:
-	announcement_webhook = "https://hooks.slack.com/services/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"
-	question_webhook = "https://hooks.slack.com/services/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"
-	penalty_webhook = "https://hooks.slack.com/services/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"
-	cash_fit_webhook = "https://hooks.slack.com/services/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"
-
 class BotOAuth:
 	user_token = "xoxp-1830334374899-1853957534688-3251494072295-b70e8bf89cc4d9a0c416d14d3075940e"
-	bot_token = "xoxb-1830334374899-2443966688067-w0MZL8043NzMuxjWzAhtK4mw"
+	bot_token = "xoxb-1830334374899-2443966688067-uYiR4dWVtj11GqJvE6D6ykBg"
 
 class ChannelID:
 	announcement = "C01PZAK0NGP"
