@@ -23,6 +23,10 @@ if __name__ == "__main__":
 			slack_post.post_message(si.ChannelID.penalty, sp.make_penalty())
 			print("==========[Slack] 월요일 모든 벌금 글 작성==========")
 			print("시간 : " + today.strftime('%c'))
+		elif (today.hour == 21):
+			slack_post.vote_dm()
+			print("==========[Slack] 미 투표자 독려 DM==========")
+			print("시간 : " + today.strftime('%c'))
 		elif (today.hour == 22):
 			google_send.send_later(st.TimeStr.vote_check_time(today), slack_get.get_vote_users(st.TimeStr.vote_post_time(today)),'v')
 			print("==========[Google Sheet] 월요일 참석투표 지각자 체크==========")

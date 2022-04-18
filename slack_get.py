@@ -61,3 +61,16 @@ def get_book_recomd_point():
 		if (tmp < 1):
 			total_users_chk[si.UserID.users_name.index(users)] += 0.5
 	return (total_users_chk)
+
+# 1시간 전 DM용
+def get_vote_users_ahour(date_time):
+	total_users = []
+	attend_users_id = []
+	absent_users_id = []
+	timestamp = st.datetime_to_timestamp(date_time)
+	vote_history = client.conversations_history(channel=si.ChannelID.announcement, oldest=timestamp)
+	for result in vote_history["messages"]:
+		if (result["user"] == "U02D1UEL81Z"):
+			attend_users_id = result["reactions"][0]["users"]
+			absent_users_id = result["reactions"][1]["users"]
+	return (attend_users_id + absent_users_id)

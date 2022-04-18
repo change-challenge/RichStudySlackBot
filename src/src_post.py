@@ -191,6 +191,22 @@ class PostStatement:
 				}
 		}
 	]
+	attend_vote_ahour = [
+		{
+			"type": "header",
+				"text": {
+					"type": "plain_text",
+					"text": ":alert::alert: [북라톤 참석 투표 마감 알림] :alert::alert:\n"
+				}
+		},
+		{
+			"type": "section",
+			"text": {
+				"type": "mrkdwn",
+				"text": "현재 북라톤 참석 투표가 *1시간* 남았습니다.\n신속히 투표를 해주시기 바랍니다. \n"
+				}
+		}
+	]
 
 def make_format1(slack, later_users):
 	for users in later_users:

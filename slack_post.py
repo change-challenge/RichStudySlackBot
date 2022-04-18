@@ -6,7 +6,15 @@
 # json.dump => [Python -> JSON]
 
 from slack import WebClient
+import slack_post
+import slack_get
 import src.src_info as si
+import src.src_time as st
+import src.src_post as sp
+from datetime import datetime
+from pytz import timezone
+
+today = datetime.now(timezone('Asia/Seoul'))
 
 client = WebClient(si.BotOAuth.bot_token)
 
@@ -15,6 +23,14 @@ client = WebClient(si.BotOAuth.bot_token)
 def post_message(channel, blocks):
 	client.chat_postMessage(channel=channel, blocks=blocks)
 
-
+def vote_dm():
+	users_id = si.UserID.users_id
+	users_id_to_name = si.UserID.users_id_to_name
+	vote_id = slack_get.get_vote_users_ahour(st.TimeStr.vote_post_time(today))
+	for id in vote_id:
+		users_id.remove(id)
+	for user in users_id:
+		print(users_id_to_name[user])
+		slack_post.post_message(user, sp.PostStatement.attend_vote_ahour)
 #post_message(si.ChannelID.cash_fit,sp.PostStatement.attend_vote_state)
 #post_message(si.ChannelID.cash_fit, slack_penalty.make_penalty())
