@@ -220,7 +220,7 @@ def make_format2(slack, later_users):
 
 def make_penalty():
 	penalty = PostStatement.penalty_state
-	vote_later, question_later, attend_later = gg.get_later('04/02')
+	vote_later, question_later, attend_later = gg.get_later(st.TimeStr.penalty_check_time(datetime.now()))
 	vote = make_format1(slack_format.vote_format, vote_later)
 	question = make_format1(slack_format.question_format, question_later)
 	attend = make_format2(slack_format.attend_format, attend_later)

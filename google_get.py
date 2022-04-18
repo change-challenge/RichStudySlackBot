@@ -10,24 +10,24 @@ col_offset = 2
 row_offset = 4
 
 def get_later(timestr):
-    vote_later = []
-    question_later = []
-    attend_later = []
-    timeidx = st.get_timeidx(col_offset, row_offset, worksheet, timestr)
-    if (timeidx == -1):
-        print("[ERROR] 해당 날짜는 없어유\n")
-        return ("ERROR", "ERROR", "ERROR");
-    bits_data = worksheet.col_values(timeidx + col_offset + 1)[row_offset:]
-    i = 0
-    for result in bits_data:
-        if result[0] == '1':
-            vote_later.append(si.UserID.users_name[i])
-        if result[1] == '1':
-            question_later.append(si.UserID.users_name[i])
-        if result[2] == '1':
-            attend_later.append(si.UserID.users_name[i])
-        i += 1
-    return (vote_later, question_later, attend_later)
+	vote_later = []
+	question_later = []
+	attend_later = []
+	timeidx = st.get_timeidx(col_offset, row_offset, worksheet, timestr)
+	if (timeidx == -1):
+		print("[ERROR] 해당 날짜는 없어유\n")
+		return ("ERROR", "ERROR", "ERROR");
+	bits_data = worksheet.col_values(timeidx + col_offset + 1)[row_offset:]
+	i = 0
+	for result in bits_data:
+		if result[0] == '1':
+			vote_later.append(si.UserID.users_name[i])
+		if result[1] == '1':
+			question_later.append(si.UserID.users_name[i])
+		if result[2] == '1':
+			attend_later.append(si.UserID.users_name[i])
+		i += 1
+	return (vote_later, question_later, attend_later)
 
 
 #  v, q, a = get_later(st.TimeStr.check_time)

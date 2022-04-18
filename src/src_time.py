@@ -28,6 +28,8 @@ class TimeStr:
 		return (dst_time + timedelta(days=1)).strftime('%m/%d')
 	def slack_post_check_time(dst_time):
 		return (dst_time - timedelta(days=1)).strftime('%m/%d')
+	def penalty_check_time(dst_time):
+		return (dst_time - timedelta(days=2)).strftime('%m/%d')
 	# 포맷) 2022년 04월 02일
 	nowtime_str = datetime.now(timezone('Asia/Seoul')).strftime('%Y년 %m월 %d일')
 	penalty_time_str = (datetime.now(timezone('Asia/Seoul')) + timedelta(days=4)).strftime('%Y년 %m월 %d일')
