@@ -1,0 +1,24 @@
+/home/ubuntu/.local/lib/python3.8/site-packages/slack/deprecation.py:16: UserWarning: slack package is deprecated. Please use slack_sdk.web/webhook/rtm package instead. For more info, go to https://slack.dev/python-slack-sdk/v3-migration/
+  warnings.warn(message)
+/home/ubuntu/.local/lib/python3.8/site-packages/slack_sdk/web/internal_utils.py:271: UserWarning: The `text` argument is missing in the request payload for a chat.postMessage call - It's a best practice to always provide a `text` argument when posting a message. The `text` argument is used in places where content cannot be rendered such as: system push notifications, assistive technology such as screen readers, etc.
+  warnings.warn(message, UserWarning)
+######################시작####################################
+박서지
+김성훈
+박상진
+정하진
+천지영
+김주영
+서수희
+윤영주
+최명원
+==========[Slack] 미 투표자 독려 DM==========
+시간 : Mon Apr 18 21:00:08 2022
+###############################끝################################
+/home/ubuntu/.local/lib/python3.8/site-packages/slack/deprecation.py:16: UserWarning: slack package is deprecated. Please use slack_sdk.web/webhook/rtm package instead. For more info, go to https://slack.dev/python-slack-sdk/v3-migration/
+  warnings.warn(message)
+######################시작####################################
+==========[Google Sheet] 월요일 참석투표 지각자 체크==========
+[1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1]
+시간 : Mon Apr 18 22:00:06 2022
+###############################끝################################

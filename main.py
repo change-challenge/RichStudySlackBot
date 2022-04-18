@@ -14,13 +14,16 @@ col_offset1 = 2
 row_offset1 = 4
 worksheet1 = si.import_googlesheet('2022년 상반기 벌금명단')
 today = datetime.now(timezone('Asia/Seoul'))
+vote_noti = "🖐 " + st.TimeStr.bookrathon_time_str + " 북라톤 참석 투표 공지"
+question_noti = "✍️ " + st.TimeStr.bookrathon_time_str + " 북라톤 질문 선정 공지"
+
 
 if __name__ == "__main__":
 	print("######################시작####################################")
 	# 월요일 
 	if (st.get_timeidx(col_offset1, row_offset1, worksheet1, st.TimeStr.vote_check_time(today)) != -1):
 		if (today.hour == 12):
-			slack_post.post_message(si.ChannelID.penalty, sp.make_penalty())
+			slack_post.post_message(si.ChannelID.penalty, sp.make_penalty(), "💸 부자스터디 벌금 알림 💸")
 			print("==========[Slack] 월요일 모든 벌금 글 작성==========")
 			print("시간 : " + today.strftime('%c'))
 		elif (today.hour == 21):
@@ -48,8 +51,8 @@ if __name__ == "__main__":
 	# 일요일
 	elif (st.get_timeidx(col_offset1, row_offset1, worksheet1, st.TimeStr.slack_post_check_time(today)) != -1):
 		if (today.hour == 12):
-			slack_post.post_message(si.ChannelID.announcement, sp.PostStatement.attend_vote_state)
-			slack_post.post_message(si.ChannelID.question, sp.PostStatement.question_state)
+			slack_post.post_message(si.ChannelID.announcement, sp.PostStatement.attend_vote_state, vote_noti)
+			slack_post.post_message(si.ChannelID.question, sp.PostStatement.question_state, question_noti)
 			print("==========[Slack] 일요일 공지 작성==========")
 			print("시간 : " + today.strftime('%c'))
 		else:

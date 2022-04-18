@@ -20,8 +20,8 @@ client = WebClient(si.BotOAuth.bot_token)
 
 # 함수 호출 예시)
 # post_message(si.ChannelID.cash_fit,sp.PostStatement.attend_vote_state)
-def post_message(channel, blocks):
-	client.chat_postMessage(channel=channel, blocks=blocks)
+def post_message(channel, blocks, text):
+	client.chat_postMessage(channel=channel, blocks=blocks, text=text)
 
 def vote_dm():
 	users_id = si.UserID.users_id
@@ -31,6 +31,6 @@ def vote_dm():
 		users_id.remove(id)
 	for user in users_id:
 		print(users_id_to_name[user])
-		slack_post.post_message(user, sp.PostStatement.attend_vote_ahour)
+		slack_post.post_message(user, sp.PostStatement.attend_vote_ahour, "🔥🔥 북라톤 모임 참석 투표 독려 알림 🔥🔥")
 #post_message(si.ChannelID.cash_fit,sp.PostStatement.attend_vote_state)
 #post_message(si.ChannelID.cash_fit, slack_penalty.make_penalty())
