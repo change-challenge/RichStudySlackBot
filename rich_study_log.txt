@@ -22,3 +22,52 @@
 [1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1]
 시간 : Mon Apr 18 22:00:06 2022
 ###############################끝################################
+/home/ubuntu/.local/lib/python3.8/site-packages/slack/deprecation.py:16: UserWarning: slack package is deprecated. Please use slack_sdk.web/webhook/rtm package instead. For more info, go to https://slack.dev/python-slack-sdk/v3-migration/
+  warnings.warn(message)
+######################시작####################################
+==========[요일 오류]==========
+시간 : Fri Apr 22 22:00:09 2022
+###############################끝################################
+/home/ubuntu/.local/lib/python3.8/site-packages/slack/deprecation.py:16: UserWarning: slack package is deprecated. Please use slack_sdk.web/webhook/rtm package instead. For more info, go to https://slack.dev/python-slack-sdk/v3-migration/
+  warnings.warn(message)
+######################시작####################################
+==========[요일 오류]==========
+시간 : Sun Apr 24 12:00:07 2022
+###############################끝################################
+/home/ubuntu/.local/lib/python3.8/site-packages/slack/deprecation.py:16: UserWarning: slack package is deprecated. Please use slack_sdk.web/webhook/rtm package instead. For more info, go to https://slack.dev/python-slack-sdk/v3-migration/
+  warnings.warn(message)
+######################시작####################################
+==========[요일 오류]==========
+시간 : Mon Apr 25 12:00:06 2022
+###############################끝################################
+/home/ubuntu/.local/lib/python3.8/site-packages/slack/deprecation.py:16: UserWarning: slack package is deprecated. Please use slack_sdk.web/webhook/rtm package instead. For more info, go to https://slack.dev/python-slack-sdk/v3-migration/
+  warnings.warn(message)
+######################시작####################################
+==========[요일 오류]==========
+시간 : Mon Apr 25 21:00:09 2022
+###############################끝################################
+/home/ubuntu/.local/lib/python3.8/site-packages/slack/deprecation.py:16: UserWarning: slack package is deprecated. Please use slack_sdk.web/webhook/rtm package instead. For more info, go to https://slack.dev/python-slack-sdk/v3-migration/
+  warnings.warn(message)
+######################시작####################################
+==========[요일 오류]==========
+시간 : Mon Apr 25 22:00:08 2022
+###############################끝################################
+/home/ubuntu/.local/lib/python3.8/site-packages/slack/deprecation.py:16: UserWarning: slack package is deprecated. Please use slack_sdk.web/webhook/rtm package instead. For more info, go to https://slack.dev/python-slack-sdk/v3-migration/
+  warnings.warn(message)
+######################시작####################################
+==========[Google Sheet] 금요일 질문선정 지각자 체크==========
+[1, 1, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0]
+시간 : Fri Apr 29 22:00:09 2022
+###############################끝################################
+/home/ubuntu/.local/lib/python3.8/site-packages/slack/deprecation.py:16: UserWarning: slack package is deprecated. Please use slack_sdk.web/webhook/rtm package instead. For more info, go to https://slack.dev/python-slack-sdk/v3-migration/
+  warnings.warn(message)
+Traceback (most recent call last):
+  File "/home/ubuntu/RichStudySlackBot/main2.py", line 25, in <module>
+    slack_post.post_message(channel=si.ChannelID.book_recomd, blocks=sp.make_book_recomd())
+TypeError: post_message() missing 1 required positional argument: 'text'
+/home/ubuntu/.local/lib/python3.8/site-packages/slack/deprecation.py:16: UserWarning: slack package is deprecated. Please use slack_sdk.web/webhook/rtm package instead. For more info, go to https://slack.dev/python-slack-sdk/v3-migration/
+  warnings.warn(message)
+######################시작####################################
+==========[Slack] 일요일 공지 작성==========
+시간 : Sun May  1 12:00:08 2022
+###############################끝################################

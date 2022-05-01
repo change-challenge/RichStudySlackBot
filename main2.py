@@ -22,7 +22,7 @@ today = datetime.now(timezone('Asia/Seoul'))
 if __name__ == "__main__":
 	# 매월 첫 날 오후 12시 
 	if (today.day == 1):
-		slack_post.post_message(channel=si.ChannelID.book_recomd, blocks=sp.make_book_recomd())
+		slack_post.post_message(channel=si.ChannelID.book_recomd, blocks=sp.make_book_recomd(),text="🪙  책추천 부자칩 공지")
 		google_send.send_richchip()
 		print("==========[Slack] 매월 부자칩 추가 공지 완료==========")
 		print("==========[Google] 매월 부자칩 추가 작성 완료==========")
